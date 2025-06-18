@@ -23,7 +23,7 @@ export function AppSidebar() {
       <SidebarHeader>
         <div className="flex flex-row justify-between px-2 items-center text-base group-data-[collapsible=icon]:p-0.5">
           <p className="group-data-[collapsible=icon]:hidden font-medium">
-            Tools
+            All Tools
           </p>
           <SidebarTrigger />
         </div>
