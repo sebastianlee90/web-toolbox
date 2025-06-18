@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { NavigationMenu } from "@/components/layout/navMenu";
+import { SidebarProvider } from "@/components/ui/sidebar";
+import { AppSidebar } from "@/components/layout/appSideBar";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -37,8 +39,13 @@ export default function RootLayout({
           minHeight: "100vh",
         }}
       >
-        <NavigationMenu />
-        {children}
+        <SidebarProvider>
+          <AppSidebar />
+          <main className="w-full">
+            <NavigationMenu />
+            {children}
+          </main>
+        </SidebarProvider>
       </body>
     </html>
   );

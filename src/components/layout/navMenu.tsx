@@ -12,12 +12,16 @@ import {
 import Link from "next/link";
 import { aboutList, toolList } from "./navMenuConstants";
 import { ListItem } from "./navMenuListItem";
+import { SidebarTrigger } from "../ui/sidebar";
 // import { CircleCheckIcon, CircleHelpIcon, CircleIcon } from "lucide-react";
 
 export function NavigationMenu() {
   return (
     <NavigationMenuPrimitive className="justify-between" viewport={false}>
       <NavigationMenuList>
+        <NavigationMenuItem>
+          <SidebarTrigger />
+        </NavigationMenuItem>
         <NavigationMenuItem>
           <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
             <Link href="/">Web Toolbox</Link>
