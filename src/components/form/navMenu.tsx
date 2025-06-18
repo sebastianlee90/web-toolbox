@@ -40,7 +40,7 @@ export function NavigationMenu() {
         <NavigationMenuItem>
           <NavigationMenuTrigger>About</NavigationMenuTrigger>
           <NavigationMenuContent className="end-0">
-            <ul className="flex w-[150px] gap-2">
+            <ul className="flex gap-2">
               {aboutList.map((data) => (
                 <ListItem key={data.title} title={data.title} href={data.href}>
                   {data.description}

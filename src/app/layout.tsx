@@ -26,7 +26,16 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} px-4 antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} px-2 antialiased`}
+        style={{
+          // backgroundImage: "url('/landscape-scene.jpg')",
+          // backgroundImage: "url('/illustration-anime-city.jpg')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+          backgroundAttachment: "fixed",
+          minHeight: "100vh",
+        }}
       >
         <NavigationMenu />
         {children}
