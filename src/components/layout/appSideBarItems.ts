@@ -1,4 +1,9 @@
-import { FileCode2, HomeIcon, LucideIcon } from "lucide-react";
+import {
+  FileCode2,
+  HomeIcon,
+  LucideIcon,
+  RemoveFormatting,
+} from "lucide-react";
 
 export type NavType = {
   id?: string;
@@ -26,6 +31,19 @@ export const appSideBarItems: NavType[] = [
         id: "base64-decode",
         name: "Base64 Decode",
         href: "/base64_decode",
+      },
+    ],
+  },
+  {
+    id: "formatter",
+    name: "Formatter",
+    href: "/formatter",
+    icon: RemoveFormatting,
+    children: [
+      {
+        id: "json-formatter",
+        name: "JSON Formatter",
+        href: "/json_formatter",
       },
     ],
   },
