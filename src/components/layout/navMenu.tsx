@@ -17,7 +17,10 @@ import { ListItem } from "./navMenuListItem";
 
 export function NavigationMenu() {
   return (
-    <NavigationMenuPrimitive className="justify-between" viewport={false}>
+    <NavigationMenuPrimitive
+      className="justify-between py-2 border-b-2 border-black"
+      viewport={false}
+    >
       <NavigationMenuList>
         {/* <NavigationMenuItem>
           <SidebarTrigger />
