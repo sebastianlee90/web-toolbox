@@ -1,4 +1,4 @@
-import { CogIcon, HomeIcon, LucideIcon } from "lucide-react";
+import { FileCode2, HomeIcon, LucideIcon } from "lucide-react";
 
 export type NavType = {
   id?: string;
@@ -12,21 +12,21 @@ export type NavType = {
 export const appSideBarItems: NavType[] = [
   { id: "home", name: "Home", href: "/", icon: HomeIcon },
   {
-    id: "converters",
-    name: "Converters",
-    href: "/converters",
-    icon: CogIcon,
+    id: "encodeDecode",
+    name: "Encode/Decode",
+    href: "/encode_decode",
+    icon: FileCode2,
     children: [
       {
-        id: "convert",
-        name: "convert",
-        href: "/convert",
+        id: "base64-encode",
+        name: "Base64 Encode",
+        href: "/base64_encode",
       },
-      //   {
-      //     id: "patient-quick-registration",
-      //     name: "Patient Quick Registration",
-      //     href: "/dashboard/patient_management/patient_quick_registration",
-      //   },
+      {
+        id: "base64-decode",
+        name: "Base64 Decode",
+        href: "/base64_decode",
+      },
     ],
   },
 ];
