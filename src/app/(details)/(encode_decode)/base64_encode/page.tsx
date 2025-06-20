@@ -1,6 +1,7 @@
 import { Header } from "@/components/form/header";
 import { Body } from "./body";
 import { LockIcon } from "lucide-react";
+import Instruction from "@/components/form/instruction";
 
 export default function Page() {
   return (
@@ -15,6 +16,7 @@ export default function Page() {
         description="Encode text data into Base64 in real time."
       />
       <Body />
+      <Instruction />
     </div>
   );
 }
