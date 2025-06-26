@@ -42,32 +42,30 @@ export function Body() {
         <div className="flex flex-col gap-2">
           <p className="text-sm">Input data to be converted to Base64</p>
           <div className="flex flex-row gap-2 justify-end">
-            <div className="flex flex-row gap-2">
-              <Button
-                title="Copy"
-                className="border-none size-6"
-                variant="outline"
-                type="button"
-                onClick={() => {
-                  navigator.clipboard.writeText(form.input);
-                  toast.success("Copied to clipboard");
-                }}
-              >
-                <CopyIcon />
-              </Button>
-              <Button
-                title="Clear"
-                className="border-none size-6"
-                variant="outline"
-                type="button"
-                onClick={() => {
-                  setForm((prevValue) => ({ ...prevValue, input: "" }));
-                  toast.success("Input cleared");
-                }}
-              >
-                <EraserIcon />
-              </Button>
-            </div>
+            <Button
+              title="Copy"
+              className="border-none size-6"
+              variant="outline"
+              type="button"
+              onClick={() => {
+                navigator.clipboard.writeText(form.input);
+                toast.success("Copied to clipboard");
+              }}
+            >
+              <CopyIcon />
+            </Button>
+            <Button
+              title="Clear"
+              className="border-none size-6"
+              variant="outline"
+              type="button"
+              onClick={() => {
+                setForm((prevValue) => ({ ...prevValue, input: "" }));
+                toast.success("Input cleared");
+              }}
+            >
+              <EraserIcon />
+            </Button>
           </div>
           <Textarea
             className="h-full"
