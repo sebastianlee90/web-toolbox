@@ -9,7 +9,7 @@ import { toast } from "sonner";
 import { useBase64Encode } from "./hooks";
 
 export function Body() {
-  const { form, setForm, conversion } = useBase64Encode();
+  const { form, setForm, result } = useBase64Encode();
 
   return (
     <div className="border border-black p-4 rounded-xl flex flex-col gap-4">
@@ -86,13 +86,7 @@ export function Body() {
               variant="outline"
               type="button"
               onClick={() => {
-                navigator.clipboard.writeText(
-                  conversion({
-                    input: form.input,
-                    toEncodeByLine: form.toEncodeByLine,
-                    toUrlSafeFormat: form.toUrlSafeFormat,
-                  })
-                );
+                navigator.clipboard.writeText(result);
                 toast.success("Copied to clipboard");
               }}
             >
@@ -104,11 +98,7 @@ export function Body() {
             className="h-full"
             placeholder="Result display here"
             readOnly
-            value={conversion({
-              input: form.input,
-              toEncodeByLine: form.toEncodeByLine,
-              toUrlSafeFormat: form.toUrlSafeFormat,
-            })}
+            value={result}
           />
         </div>
       </div>

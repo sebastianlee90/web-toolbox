@@ -39,5 +39,11 @@ export function useBase64Encode() {
     }
   }
 
-  return { form, setForm, conversion };
+  const result = conversion({
+    input: form.input,
+    toEncodeByLine: form.toEncodeByLine,
+    toUrlSafeFormat: form.toUrlSafeFormat,
+  });
+
+  return { form, setForm, result };
 }
