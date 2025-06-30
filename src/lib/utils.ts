@@ -12,3 +12,8 @@ export function toCamelCase(text: string): string {
     .replace(/\s+(.)/g, (_, char: string) => char.toUpperCase()) // Capitalize letters after spaces
     .replace(/\s/g, ""); // Remove remaining spaces
 }
+
+export function isScientificNotation(str: string) {
+  const regex = /^[+-]?\d+(\.\d+)?[eE][+-]?\d+$/;
+  return regex.test(str);
+}

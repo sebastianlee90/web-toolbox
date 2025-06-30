@@ -3,6 +3,7 @@ import {
   HomeIcon,
   LucideIcon,
   RemoveFormatting,
+  Repeat,
 } from "lucide-react";
 
 export type NavType = {
@@ -16,6 +17,19 @@ export type NavType = {
 
 export const appSideBarItems: NavType[] = [
   { id: "home", name: "Home", href: "/", icon: HomeIcon },
+  {
+    id: "converter",
+    name: "Converter",
+    href: "/converter",
+    icon: Repeat,
+    children: [
+      {
+        id: "number-base-converter",
+        name: "Number Base Converter",
+        href: "/number_base_converter",
+      },
+    ],
+  },
   {
     id: "encodeDecode",
     name: "Encode/Decode",
