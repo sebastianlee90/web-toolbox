@@ -133,6 +133,7 @@
 }
 
 /* Adding this to fix scroll bar removal & screen resize on open select component*/
+/* https://github.com/shadcn-ui/ui/issues/4227 */
 body {
   margin-right: 0;
   margin-left: 0;
