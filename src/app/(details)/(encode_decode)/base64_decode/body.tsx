@@ -7,6 +7,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { CopyIcon, EraserIcon } from "lucide-react";
 import { useBase64Decode } from "./hooks";
 import { toast } from "sonner";
+import { copyToClipboard } from "@/hooks/common";
 
 export function Body() {
   const { form, setForm, result } = useBase64Decode();
@@ -36,10 +37,7 @@ export function Body() {
               className="border-none size-6"
               variant="outline"
               type="button"
-              onClick={() => {
-                navigator.clipboard.writeText(form.input);
-                toast.success("Copied to clipboard");
-              }}
+              onClick={() => copyToClipboard(form.input)}
             >
               <CopyIcon />
             </Button>
@@ -74,10 +72,7 @@ export function Body() {
               className="border-none size-6"
               variant="outline"
               type="button"
-              onClick={() => {
-                navigator.clipboard.writeText(result);
-                toast.success("Copied to clipboard");
-              }}
+              onClick={() => copyToClipboard(result)}
             >
               <CopyIcon />
             </Button>

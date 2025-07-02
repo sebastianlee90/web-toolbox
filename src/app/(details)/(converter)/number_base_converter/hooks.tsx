@@ -2,7 +2,6 @@
 
 import { isScientificNotation } from "@/lib/utils";
 import { useState } from "react";
-import { toast } from "sonner";
 
 export function useNumberBaseConverter() {
   type BaseKey = "binary" | "octal" | "decimal" | "hexadecimal";
@@ -48,11 +47,6 @@ export function useNumberBaseConverter() {
     setInput(initialize);
   }
 
-  function handleCopy(text: string) {
-    navigator.clipboard.writeText(text);
-    toast.success("Copied to clipboard");
-  }
-
   function handleConvert(label: BaseKey, value: string) {
     const newInput = { ...input };
     newInput[label] = value;
@@ -69,5 +63,5 @@ export function useNumberBaseConverter() {
     setAlert(isScientificNotation(newInput.decimal));
   }
 
-  return { bases, input, alert, handleCopy, handleClear, handleConvert };
+  return { bases, input, alert, handleClear, handleConvert };
 }

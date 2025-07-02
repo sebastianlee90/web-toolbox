@@ -5,9 +5,10 @@ import { CopyIcon, EraserIcon, TriangleAlert } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { cn } from "@/lib/utils";
 import { useNumberBaseConverter } from "./hooks";
+import { copyToClipboard } from "@/hooks/common";
 
 export function Body() {
-  const { bases, input, alert, handleCopy, handleClear, handleConvert } =
+  const { bases, input, alert, handleClear, handleConvert } =
     useNumberBaseConverter();
 
   return (
@@ -56,7 +57,7 @@ export function Body() {
                 title={`Copy ${label.charAt(0).toUpperCase() + label.slice(1)}`}
                 variant="ghost"
                 size="icon"
-                onClick={() => handleCopy(input[label])}
+                onClick={() => copyToClipboard(input[label])}
               >
                 <CopyIcon className="size-4" />
               </Button>
