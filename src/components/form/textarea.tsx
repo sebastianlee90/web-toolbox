@@ -26,7 +26,9 @@ export function Textarea({
       <div
         className={cn(
           "flex flex-row gap-2",
-          label && (copy || props.readOnly) ? "justify-between" : "justify-end"
+          label && (copy || props.readOnly)
+            ? "justify-between"
+            : "justify-start"
         )}
       >
         {label && (
