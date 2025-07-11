@@ -1,4 +1,5 @@
 import {
+  Dna,
   FileCode2,
   HomeIcon,
   LucideIcon,
@@ -58,6 +59,19 @@ export const appSideBarItems: NavType[] = [
         id: "json-formatter",
         name: "JSON Formatter",
         href: "/json_formatter",
+      },
+    ],
+  },
+  {
+    id: "generator",
+    name: "Generator",
+    href: "/generator",
+    icon: Dna,
+    children: [
+      {
+        id: "uuid-generator",
+        name: "UUID Generator",
+        href: "/uuid_generator",
       },
     ],
   },

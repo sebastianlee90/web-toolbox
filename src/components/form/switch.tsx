@@ -36,7 +36,7 @@ export function Switch({ labelPosition = "left", ...props }: Props) {
         labelPosition === "left" && "flex-row",
         labelPosition === "bottom" && "flex-col-reverse",
         labelPosition === "right" && "flex-row-reverse",
-        "flex items-center gap-1"
+        "flex items-center gap-2"
       )}
     >
       {props.label && (
