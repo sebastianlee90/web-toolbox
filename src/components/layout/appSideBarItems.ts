@@ -3,7 +3,7 @@ import {
   FileCode2,
   HomeIcon,
   LucideIcon,
-  RemoveFormatting,
+  // RemoveFormatting,
   Repeat,
 } from "lucide-react";
 
@@ -49,19 +49,19 @@ export const appSideBarItems: NavType[] = [
       },
     ],
   },
-  {
-    id: "formatter",
-    name: "Formatter",
-    href: "/formatter",
-    icon: RemoveFormatting,
-    children: [
-      {
-        id: "json-formatter",
-        name: "JSON Formatter",
-        href: "/json_formatter",
-      },
-    ],
-  },
+  // {
+  //   id: "formatter",
+  //   name: "Formatter",
+  //   href: "/formatter",
+  //   icon: RemoveFormatting,
+  //   children: [
+  //     {
+  //       id: "json-formatter",
+  //       name: "JSON Formatter",
+  //       href: "/json_formatter",
+  //     },
+  //   ],
+  // },
   {
     id: "generator",
     name: "Generator",
