@@ -34,6 +34,11 @@ export const appSideBarItems: NavType[] = [
         name: "UUID V1 to V6",
         href: "/uuid_v1_to_v6",
       },
+      {
+        id: "uuid-v6-to-v1",
+        name: "UUID V6 to V1",
+        href: "/uuid_v6_to_v1",
+      },
     ],
   },
   {
