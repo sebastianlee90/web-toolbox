@@ -29,6 +29,11 @@ export const appSideBarItems: NavType[] = [
         name: "Number Base Converter",
         href: "/number_base_converter",
       },
+      {
+        id: "uuid-v1-to-v6",
+        name: "UUID V1 to V6",
+        href: "/uuid_v1_to_v6",
+      },
     ],
   },
   {
