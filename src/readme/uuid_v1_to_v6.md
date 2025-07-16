@@ -25,13 +25,13 @@ The UUID v1 to v6 Converter Tool allows you to seamlessly convert time-based UUI
 
 **Input (UUIDv1):**
 
-```
+```bash
 f47ac10b-58cc-11cf-a9a6-08002b123456
 ```
 
 **Output (UUIDv6):**
 
-```
+```bash
 1ff47ac1-0b58-cc11-cfa9-a608002b123456
 ```
 
