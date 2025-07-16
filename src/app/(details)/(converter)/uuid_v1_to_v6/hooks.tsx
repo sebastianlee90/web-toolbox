@@ -41,7 +41,6 @@ export function useUuidV1ToV6() {
   }
 
   function convert() {
-    // return v1ToV6(form.input);
     setForm((prevValue) => ({
       ...prevValue,
       output: v1ToV6(form.input),
