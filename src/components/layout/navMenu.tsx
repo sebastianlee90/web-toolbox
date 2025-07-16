@@ -18,7 +18,7 @@ import { ListItem } from "./navMenuListItem";
 export function NavigationMenu() {
   return (
     <NavigationMenuPrimitive
-      className="sticky top-2 justify-between py-2 mr-2 border-b-2 border-black backdrop-blur-sm"
+      className="sticky top-0 justify-between pt-4 pb-2 border-b-2 border-black backdrop-blur-sm"
       viewport={false}
     >
       <NavigationMenuList>
