@@ -36,21 +36,21 @@ export default function Instruction({ className }: { className?: string }) {
       <ReactMarkdown
         remarkPlugins={[remarkGfm]}
         rehypePlugins={[rehypeRaw]}
-        components={
-          {
-            //   h1: ({ node, ...props }) => (
-            //     <h1 className="text-3xl font-bold my-4" {...props} />
-            //   ),
-            //   h2: ({ node, ...props }) => (
-            //     <h2 className="text-2xl font-semibold my-3" {...props} />
-            //   ),
-            //   ul: ({ node, ...props }) => (
-            //     <ul className="list-disc ml-6 my-2" {...props} />
-            //   ),
-            //   li: ({ node, ...props }) => <li className="mb-1" {...props} />,
-            //   p: ({ node, ...props }) => <p className="my-2" {...props} />,
-          }
-        }
+        // components={
+        //   {
+        //     //   h1: ({ node, ...props }) => (
+        //     //     <h1 className="text-3xl font-bold my-4" {...props} />
+        //     //   ),
+        //     //   h2: ({ node, ...props }) => (
+        //     //     <h2 className="text-2xl font-semibold my-3" {...props} />
+        //     //   ),
+        //     //   ul: ({ node, ...props }) => (
+        //     //     <ul className="list-disc ml-6 my-2" {...props} />
+        //     //   ),
+        //     //   li: ({ node, ...props }) => <li className="mb-1" {...props} />,
+        //     //   p: ({ node, ...props }) => <p className="my-2" {...props} />,
+        //   }
+        // }
       >
         {markdown}
       </ReactMarkdown>
