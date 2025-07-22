@@ -1,16 +1,15 @@
 "use client";
 
+import { Table } from "@/components/form/tanstackTable/table";
 import { Textarea } from "@/components/form/textarea";
 import { Button } from "@/components/ui/button";
 import { copyToClipboard } from "@/hooks/common";
-import { CopyIcon, EraserIcon } from "lucide-react";
-import { useState } from "react";
+import { Check, CopyIcon, EraserIcon } from "lucide-react";
+import { columns } from "./columns";
+import { useUuidValidator } from "./hooks";
 
 export function Body() {
-  const initialize = {
-    input: "",
-  };
-  const [form, setForm] = useState(initialize);
+  const { form, setForm, validate, handleClear } = useUuidValidator();
 
   return (
     <div className="border border-black p-4 rounded-xl flex flex-col gap-4">
@@ -34,7 +33,7 @@ export function Body() {
               className="border-none size-8"
               variant="outline"
               type="button"
-              onClick={() => setForm(initialize)}
+              onClick={handleClear}
             >
               <EraserIcon />
             </Button>
@@ -47,9 +46,20 @@ export function Body() {
           onChange={(e) => setForm({ ...form, input: e.target.value })}
         />
       </div>
-      <Button variant="default" type="button">
-        Validate
-      </Button>
+      <div className="grid grid-cols-3">
+        <div />
+        <Button
+          title="Validate"
+          variant="info"
+          type="button"
+          disabled={!form.input}
+          onClick={() => validate(form.input ?? "")}
+        >
+          <Check className="mr-4 size-5" />
+          Validate
+        </Button>
+      </div>
+      <Table data={form.output} columns={columns} />
     </div>
   );
 }
