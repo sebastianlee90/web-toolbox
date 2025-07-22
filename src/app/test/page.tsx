@@ -69,7 +69,7 @@ export default function Page() {
     { id: 5, column1: "M", column2: "N", column3: "O" },
     { id: 6, column1: "P", column2: "Q", column3: "R" },
   ];
-  const emptyData = [];
+  const emptyData: Row[] = [];
 
   return (
     <div className="flex flex-col gap-4 mt-4">
@@ -86,12 +86,12 @@ export default function Page() {
       <h1 className="text-2xl">Self Made Table</h1>
       <Table
         data={emptyData}
-        columns={[
-          { accessorKey: "id", header: "ID" },
-          { accessorKey: "column1", header: "Column 1" },
-          { accessorKey: "column2", header: "Column 2" },
-          { accessorKey: "column3", header: "Column 3" },
-        ]}
+        // columns={[
+        //   { accessorKey: "id", header: "ID" },
+        //   { accessorKey: "column1", header: "Column 1" },
+        //   { accessorKey: "column2", header: "Column 2" },
+        //   { accessorKey: "column3", header: "Column 3" },
+        // ]}
       />
     </div>
   );
