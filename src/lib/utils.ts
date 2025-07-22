@@ -5,6 +5,10 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
 
+export const makeSpace = (str: string) => {
+  return str.replace(/([A-Z])/g, " $1").trim();
+};
+
 export function toCamelCase(text: string): string {
   return text
     .toLowerCase()
