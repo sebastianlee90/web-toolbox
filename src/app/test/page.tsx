@@ -2,6 +2,7 @@
 
 import { Table as ImportTable } from "@/components/form/tanstackTable/import/table";
 import { Table } from "@/components/form/tanstackTable/table";
+import { Suspense } from "react";
 // import {
 //   useReactTable,
 //   ColumnDef,
@@ -72,27 +73,41 @@ export default function Page() {
   const emptyData: Row[] = [];
 
   return (
-    <div className="flex flex-col gap-4 mt-4">
-      <h1 className="text-2xl">PhIS Table</h1>
-      <ImportTable
-        data={data}
-        columns={[
-          { accessorKey: "id", header: "ID", enableSorting: false },
-          { accessorKey: "column1", header: "Column 1", enableSorting: false },
-          { accessorKey: "column2", header: "Column 2", enableSorting: false },
-          { accessorKey: "column3", header: "Column 3", enableSorting: false },
-        ]}
-      />
-      <h1 className="text-2xl">Self Made Table</h1>
-      <Table
-        data={emptyData}
-        // columns={[
-        //   { accessorKey: "id", header: "ID" },
-        //   { accessorKey: "column1", header: "Column 1" },
-        //   { accessorKey: "column2", header: "Column 2" },
-        //   { accessorKey: "column3", header: "Column 3" },
-        // ]}
-      />
-    </div>
+    <Suspense>
+      <div className="flex flex-col gap-4 mt-4">
+        <h1 className="text-2xl">PhIS Table</h1>
+        <ImportTable
+          data={data}
+          columns={[
+            { accessorKey: "id", header: "ID", enableSorting: false },
+            {
+              accessorKey: "column1",
+              header: "Column 1",
+              enableSorting: false,
+            },
+            {
+              accessorKey: "column2",
+              header: "Column 2",
+              enableSorting: false,
+            },
+            {
+              accessorKey: "column3",
+              header: "Column 3",
+              enableSorting: false,
+            },
+          ]}
+        />
+        <h1 className="text-2xl">Self Made Table</h1>
+        <Table
+          data={emptyData}
+          // columns={[
+          //   { accessorKey: "id", header: "ID" },
+          //   { accessorKey: "column1", header: "Column 1" },
+          //   { accessorKey: "column2", header: "Column 2" },
+          //   { accessorKey: "column3", header: "Column 3" },
+          // ]}
+        />
+      </div>
+    </Suspense>
   );
 }
