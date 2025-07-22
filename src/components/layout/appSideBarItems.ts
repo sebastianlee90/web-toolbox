@@ -1,4 +1,5 @@
 import {
+  BadgeCheck,
   Dna,
   FileCode2,
   HomeIcon,
@@ -82,6 +83,19 @@ export const appSideBarItems: NavType[] = [
         id: "uuid-generator",
         name: "UUID Generator",
         href: "/uuid_generator",
+      },
+    ],
+  },
+  {
+    id: "validator",
+    name: "Validator",
+    href: "/validator",
+    icon: BadgeCheck,
+    children: [
+      {
+        id: "uuid-validator",
+        name: "UUID Validator",
+        href: "/uuid_validator",
       },
     ],
   },
