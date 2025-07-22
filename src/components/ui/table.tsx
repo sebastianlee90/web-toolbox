@@ -10,7 +10,7 @@ const Table = React.forwardRef<
     <table
       ref={ref}
       className={cn(
-        "w-full caption-bottom divide-y divide-[#B1CEF3] overflow-hidden text-sm",
+        "w-full caption-bottom divide-y divide-[#B1CEF3] overflow-hidden text-md border",
         className
       )}
       {...props}
@@ -23,7 +23,7 @@ const TableHeader = React.forwardRef<
   HTMLTableSectionElement,
   React.HTMLAttributes<HTMLTableSectionElement>
 >(({ className, ...props }, ref) => (
-  <thead ref={ref} className={cn("", className)} {...props} />
+  <thead ref={ref} className={cn("bg-gray-200", className)} {...props} />
 ));
 TableHeader.displayName = "TableHeader";
 
