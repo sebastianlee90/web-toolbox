@@ -87,10 +87,10 @@ export default function Page() {
       <Table
         data={emptyData}
         columns={[
-          { accessorKey: "id", header: "ID", enableSorting: false },
-          { accessorKey: "column1", header: "Column 1", enableSorting: false },
-          { accessorKey: "column2", header: "Column 2", enableSorting: false },
-          { accessorKey: "column3", header: "Column 3", enableSorting: false },
+          { accessorKey: "id", header: "ID" },
+          { accessorKey: "column1", header: "Column 1" },
+          { accessorKey: "column2", header: "Column 2" },
+          { accessorKey: "column3", header: "Column 3" },
         ]}
       />
     </div>
