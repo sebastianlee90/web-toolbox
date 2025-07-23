@@ -1,24 +1,25 @@
 "use client";
 
 import {
-  NavigationMenu as NavigationMenuPrimitive,
   NavigationMenuContent,
   NavigationMenuItem,
   NavigationMenuLink,
   NavigationMenuList,
+  NavigationMenu as NavigationMenuPrimitive,
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 import Link from "next/link";
 import { aboutList, toolList } from "./navMenuConstants";
 import { ListItem } from "./navMenuListItem";
+import { ThemeChanger } from "./themeChanger";
 // import { SidebarTrigger } from "../ui/sidebar";
 // import { CircleCheckIcon, CircleHelpIcon, CircleIcon } from "lucide-react";
 
 export function NavigationMenu() {
   return (
     <NavigationMenuPrimitive
-      className="sticky top-0 justify-between pt-4 pb-2 border-b-2 border-black backdrop-blur-sm"
+      className="sticky top-0 justify-between pt-4 pb-2 border-b-2 border-black dark:border-white backdrop-blur-sm"
       viewport={false}
     >
       <NavigationMenuList>
@@ -44,6 +45,7 @@ export function NavigationMenu() {
         </NavigationMenuItem>
       </NavigationMenuList>
       <NavigationMenuList>
+        <ThemeChanger />
         <NavigationMenuItem>
           <NavigationMenuTrigger>About</NavigationMenuTrigger>
           <NavigationMenuContent className="end-0">
@@ -56,6 +58,7 @@ export function NavigationMenu() {
             </ul>
           </NavigationMenuContent>
         </NavigationMenuItem>
+
         {/* <NavigationMenuItem>
           <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
             <Link href="/docs">Docs</Link>
