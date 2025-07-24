@@ -2,11 +2,11 @@
 
 import Input from "@/components/form/input";
 import { Select } from "@/components/form/select";
+import { Switch } from "@/components/form/switch";
 import { Textarea } from "@/components/form/textarea";
 import { Button } from "@/components/ui/button";
-import { useUuidGenerator } from "./hooks";
 import { EraserIcon, ShuffleIcon } from "lucide-react";
-import { Switch } from "@/components/form/switch";
+import { useUuidGenerator } from "./hooks";
 
 export function Body() {
   const {
@@ -23,6 +23,7 @@ export function Body() {
     <div className="border border-black p-4 rounded-xl flex flex-col gap-4">
       <div className="grid grid-cols-3 gap-4">
         <Select
+          title="UUID Version"
           label="UUID Version"
           labelPosition="left"
           options={[

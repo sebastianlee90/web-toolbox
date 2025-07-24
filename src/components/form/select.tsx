@@ -20,6 +20,7 @@ export function Select({
   defaultValue,
   onChange,
   disabled,
+  title,
 }: {
   label?: string;
   labelPosition?: "top" | "left" | "bottom" | "right";
@@ -34,6 +35,7 @@ export function Select({
   defaultValue?: string;
   onChange?: (v: string) => void;
   disabled?: boolean;
+  title?: string;
 }) {
   const name = label ? propsName ?? toCamelCase(label) : propsName;
 
@@ -66,7 +68,7 @@ export function Select({
         onValueChange={onChange}
         disabled={disabled}
       >
-        <SelectTrigger className="w-[130px]">
+        <SelectTrigger className="w-[130px]" title={title}>
           <SelectValue placeholder={placeholder} />
         </SelectTrigger>
         <SelectContent>

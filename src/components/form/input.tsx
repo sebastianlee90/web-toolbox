@@ -1,15 +1,6 @@
 import { cn, toCamelCase } from "@/lib/utils";
 import { LoaderIcon } from "lucide-react";
-
-type Props = {
-  title?: string;
-  label?: string;
-  labelClassName?: string;
-  labelPosition?: "top" | "left" | "bottom" | "right";
-  error?: string;
-  // required?: boolean;
-  loading?: boolean;
-};
+import { TooltipWrapper } from "../ui/tooltip";
 
 export default function Input({
   title,
@@ -19,12 +10,23 @@ export default function Input({
   error,
   // required,
   loading,
+  tooltipSide,
+  tooltipAlign,
   ...props
-}: Props &
-  React.DetailedHTMLProps<
-    React.InputHTMLAttributes<HTMLInputElement>,
-    HTMLInputElement
-  >) {
+}: {
+  title?: string;
+  label?: string;
+  labelClassName?: string;
+  labelPosition?: "top" | "left" | "bottom" | "right";
+  error?: string;
+  // required?: boolean;
+  loading?: boolean;
+  tooltipSide?: "top" | "right" | "bottom" | "left";
+  tooltipAlign?: "center" | "start" | "end";
+} & React.DetailedHTMLProps<
+  React.InputHTMLAttributes<HTMLInputElement>,
+  HTMLInputElement
+>) {
   // const { label, loading, ...rest } = props;
   const { ...rest } = props;
   const titleText = title ?? label;
@@ -64,20 +66,26 @@ export default function Input({
             />
           </div>
         ) : (
-          <input
-            {...rest}
-            className={cn(
-              "block h-full w-full rounded-md border py-1 pl-2 text-base md:text-sm focus:border-slate-500 focus:outline-hidden focus:ring-slate-500 dark:border-slate-600 dark:bg-slate-800",
-              error
-                ? "border-red-300 pr-10 text-destructive"
-                : "border-gray-300 pr-2 text-foreground",
-              "disabled:border-disabled-foreground disabled:bg-disabled disabled:text-disabled-foreground disabled:shadow-none",
-              "read-only:border-disabled-foreground read-only:bg-disabled read-only:text-disabled-foreground",
-              props.className
-            )}
-            id={`${name}-input`}
+          <TooltipWrapper
             title={titleText}
-          />
+            side={tooltipSide}
+            align={tooltipAlign}
+          >
+            <input
+              {...rest}
+              className={cn(
+                "block h-full w-full rounded-md border py-1 pl-2 text-base md:text-sm focus:border-slate-500 focus:outline-hidden focus:ring-slate-500 dark:border-slate-600 dark:bg-slate-800",
+                error
+                  ? "border-red-300 pr-10 text-destructive"
+                  : "border-gray-300 pr-2 text-foreground",
+                "disabled:border-disabled-foreground disabled:bg-disabled disabled:text-disabled-foreground disabled:shadow-none",
+                "read-only:border-disabled-foreground read-only:bg-disabled read-only:text-disabled-foreground",
+                props.className
+              )}
+              id={`${name}-input`}
+              title={titleText}
+            />
+          </TooltipWrapper>
         )}
       </div>
       {error && <p className="mt-2 text-sm text-destructive">{error}</p>}
