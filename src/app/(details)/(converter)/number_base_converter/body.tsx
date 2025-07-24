@@ -1,11 +1,11 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { CopyIcon, EraserIcon, TriangleAlert } from "lucide-react";
 import { Input } from "@/components/ui/input";
-import { cn } from "@/lib/utils";
-import { useNumberBaseConverter } from "./hooks";
 import { copyToClipboard } from "@/hooks/common";
+import { cn } from "@/lib/utils";
+import { CopyIcon, EraserIcon, TriangleAlert } from "lucide-react";
+import { useNumberBaseConverter } from "./hooks";
 
 export function Body() {
   const { bases, input, alert, handleClear, handleConvert } =
@@ -39,13 +39,11 @@ export function Body() {
           {bases.map(({ label }) => (
             <div
               key={label}
-              className="flex items-center justify-between border rounded p-2 gap-2 bg-slate-50"
+              className="flex items-center justify-between border rounded-xl p-2 gap-2 bg-slate-50 "
             >
-              <span className="font-mono">
-                <span className="font-bold">
-                  {label.charAt(0).toUpperCase() + label.slice(1)}:
-                </span>
-              </span>
+              <p className="text-foreground dark:text-background font-mono font-bold">
+                {label.charAt(0).toUpperCase() + label.slice(1)}:
+              </p>
               <Input
                 className="border-none"
                 value={input[label]}
@@ -55,7 +53,7 @@ export function Body() {
               />
               <Button
                 title={`Copy ${label.charAt(0).toUpperCase() + label.slice(1)}`}
-                variant="ghost"
+                variant="input"
                 size="icon"
                 onClick={() => copyToClipboard(input[label])}
               >

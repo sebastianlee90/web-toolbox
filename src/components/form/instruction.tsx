@@ -1,13 +1,13 @@
 "use client";
 
-import { usePathname } from "next/navigation";
-import ReactMarkdown from "react-markdown";
-import { useEffect, useState } from "react";
 import { loadMarkdownByFilename } from "@/lib/markdown";
 import { cn } from "@/lib/utils";
-import remarkGfm from "remark-gfm";
-import rehypeRaw from "rehype-raw";
 import "github-markdown-css/github-markdown.css";
+import { usePathname } from "next/navigation";
+import { useEffect, useState } from "react";
+import ReactMarkdown from "react-markdown";
+import rehypeRaw from "rehype-raw";
+import remarkGfm from "remark-gfm";
 
 export default function Instruction({ className }: { className?: string }) {
   const pathname = usePathname(); // e.g., "/base64_encode"

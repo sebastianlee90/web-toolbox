@@ -4,17 +4,17 @@ import { Switch } from "@/components/form/switch";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
-import { CopyIcon, EraserIcon } from "lucide-react";
-import { useBase64Decode } from "./hooks";
-import { toast } from "sonner";
 import { copyToClipboard } from "@/hooks/common";
+import { CopyIcon, EraserIcon } from "lucide-react";
+import { toast } from "sonner";
+import { useBase64Decode } from "./hooks";
 
 export function Body() {
   const { form, setForm, result } = useBase64Decode();
 
   return (
     <div className="border border-black p-4 rounded-xl flex flex-col gap-4">
-      <div className="flex flex-row gap-4 rounded-xl bg-slate-100 p-4">
+      <div className="flex flex-row gap-4 rounded-xl dark:bg-slate-200 bg-slate-100 p-4">
         <Switch
           label="Decode by line"
           labelPosition="right"
