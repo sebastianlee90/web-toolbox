@@ -1,22 +1,27 @@
 "use client";
 
-import { cn, toCamelCase } from "@/lib/utils";
-import { Textarea as TTextarea } from "../ui/textarea";
-import { Badge } from "../ui/badge";
-import { CopyIcon } from "lucide-react";
-import { Button } from "../ui/button";
 import { copyToClipboard } from "@/hooks/common";
+import { cn, toCamelCase } from "@/lib/utils";
+import { CopyIcon } from "lucide-react";
+import { Badge } from "../ui/badge";
+import { Button } from "../ui/button";
+import { Textarea as TTextarea } from "../ui/textarea";
+import { TooltipWrapper } from "../ui/tooltip";
 
 export function Textarea({
   label,
   labelClassName,
   name: propsName,
   copy,
+  tooltipSide,
+  tooltipAlign,
   ...props
 }: React.ComponentProps<typeof TTextarea> & {
   label?: string;
   labelClassName?: string;
   copy?: boolean;
+  tooltipSide?: "top" | "right" | "bottom" | "left";
+  tooltipAlign?: "center" | "start" | "end";
 }) {
   const name = label ? propsName ?? toCamelCase(label) : propsName;
   const titleText = props.title ?? label;
@@ -57,7 +62,9 @@ export function Textarea({
           {props.readOnly && <Badge>Read-Only</Badge>}
         </div>
       </div>
-      <TTextarea name={name} title={titleText} {...props} />
+      <TooltipWrapper title={titleText} side={tooltipSide} align={tooltipAlign}>
+        <TTextarea name={name} {...props} />
+      </TooltipWrapper>
     </div>
   );
 }
