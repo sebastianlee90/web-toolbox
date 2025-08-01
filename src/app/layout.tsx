@@ -41,12 +41,7 @@ export default function RootLayout({
           minHeight: "100vh",
         }}
       >
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
+        <ThemeProvider>
           <SidebarProvider>
             <AppSidebar />
             <main className="w-full">

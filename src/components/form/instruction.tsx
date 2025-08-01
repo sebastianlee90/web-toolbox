@@ -2,6 +2,8 @@
 
 import { loadMarkdownByFilename } from "@/lib/markdown";
 import { cn } from "@/lib/utils";
+// import "github-markdown-css/github-markdown-dark.css";
+// import "github-markdown-css/github-markdown-light.css";
 import "github-markdown-css/github-markdown.css";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
@@ -9,7 +11,7 @@ import ReactMarkdown from "react-markdown";
 import rehypeRaw from "rehype-raw";
 import remarkGfm from "remark-gfm";
 
-export default function Instruction({ className }: { className?: string }) {
+export function Instruction({ className }: { className?: string }) {
   const pathname = usePathname(); // e.g., "/base64_encode"
   const [markdown, setMarkdown] = useState("");
 

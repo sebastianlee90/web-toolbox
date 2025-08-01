@@ -1,7 +1,7 @@
 import { Header } from "@/components/form/header";
-import { Body } from "./body";
+import { Instruction } from "@/components/form/instruction";
 import { LockIcon } from "lucide-react";
-import Instruction from "@/components/form/instruction";
+import { Body } from "./body";
 
 export default function Page() {
   return (

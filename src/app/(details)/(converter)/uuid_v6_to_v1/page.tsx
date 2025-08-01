@@ -1,6 +1,6 @@
 import { Header } from "@/components/form/header";
+import { Instruction } from "@/components/form/instruction";
 import { ArrowDown01 } from "lucide-react";
-import Instruction from "@/components/form/instruction";
 import { Body } from "./body";
 
 export default function Page() {
