@@ -2,9 +2,7 @@
 
 import { loadMarkdownByFilename } from "@/lib/markdown";
 import { cn } from "@/lib/utils";
-// import "github-markdown-css/github-markdown-dark.css";
-// import "github-markdown-css/github-markdown-light.css";
-import "github-markdown-css/github-markdown.css";
+// import "github-markdown-css/github-markdown.css";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import ReactMarkdown from "react-markdown";
