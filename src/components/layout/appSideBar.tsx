@@ -70,6 +70,7 @@ function NavItem({
       isCurrent = false;
   }
 
+  // If the item has children, render a submenu
   if (item.children) {
     return (
       <SidebarMenuItem>
@@ -85,6 +86,8 @@ function NavItem({
       </SidebarMenuItem>
     );
   }
+
+  // If the item doesn't have children, render a button
   return (
     <SidebarMenuItem>
       <Link href={item.href ?? "#"}>
@@ -94,7 +97,7 @@ function NavItem({
           className={cn(child ? "pl-6" : "")}
           isActive={isCurrent && pathname === item.href}
         >
-          {item.icon && <item.icon />}
+          {item.name === "Home" && item.icon && <item.icon />}
           <span>{item.name}</span>
         </SidebarMenuButton>
       </Link>

@@ -1,6 +1,6 @@
 import { Header } from "@/components/form/header";
 import { Instruction } from "@/components/form/instruction";
-import { FileDigit } from "lucide-react";
+import { Binary } from "lucide-react";
 import { Body } from "./body";
 
 export default function Page() {
@@ -9,7 +9,7 @@ export default function Page() {
       <Header
         title={
           <>
-            <FileDigit className="size-12 border-4 p-0.5 " />
+            <Binary className="size-12 border-4 p-0.5 " />
             Number Base Converter
           </>
         }

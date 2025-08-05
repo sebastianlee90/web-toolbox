@@ -1,6 +1,6 @@
 import { Header } from "@/components/form/header";
 import { Instruction } from "@/components/form/instruction";
-import { LockIcon } from "lucide-react";
+import { LockOpen } from "lucide-react";
 import { Body } from "./body";
 
 export default function Page() {
@@ -9,7 +9,7 @@ export default function Page() {
       <Header
         title={
           <>
-            <LockIcon className="size-12 border-4 p-0.5 " />
+            <LockOpen className="size-12 border-4 p-0.5 " />
             Base64 Decode
           </>
         }
