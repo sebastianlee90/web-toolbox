@@ -10,6 +10,7 @@ import {
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 import Link from "next/link";
+import { Command } from "../form/command";
 import { aboutList, toolList } from "./navMenuConstants";
 import { ListItem } from "./navMenuListItem";
 import { ThemeChanger } from "./themeChanger";
@@ -45,6 +46,7 @@ export function NavigationMenu() {
         </NavigationMenuItem>
       </NavigationMenuList>
       <NavigationMenuList>
+        <Command />
         <ThemeChanger />
         <NavigationMenuItem>
           <NavigationMenuTrigger>About</NavigationMenuTrigger>
