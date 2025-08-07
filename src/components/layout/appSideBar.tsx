@@ -13,9 +13,9 @@ import {
   SidebarTrigger,
 } from "@/components/ui/sidebar";
 import { cn } from "@/lib/utils";
-import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { Logo } from "../icons/logo";
 import { appSideBarItems } from "./appSideBarItems";
 
 export function AppSidebar() {
@@ -24,14 +24,8 @@ export function AppSidebar() {
       <SidebarHeader>
         <div className="flex flex-row justify-between px-2 items-center text-base group-data-[collapsible=icon]:p-0.5">
           <p className="group-data-[collapsible=icon]:hidden font-medium flex flex-row gap-2">
-            <Image
-              src="/logo.svg"
-              alt="logo"
-              width={30}
-              height={30}
-              className="mt-0.5"
-            />
-            Web Toolbox
+            <Logo className="-mb-0.5 text-foreground" />
+            <span className="mt-0.5">Web Toolbox</span>
           </p>
           <SidebarTrigger />
         </div>
