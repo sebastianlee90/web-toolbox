@@ -32,29 +32,26 @@ export default function RootLayout({
     <html lang="en" className="light" style={{ colorScheme: "light" }}>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-        // style={
-        //   {
-        //     // backgroundImage: "url('/landscape-scene.jpg')",
-        //     // backgroundImage: "url('/illustration-anime-city.jpg')",
-        //     // backgroundSize: "cover",
-        //     // backgroundPosition: "center",
-        //     // backgroundRepeat: "no-repeat",
-        //     // backgroundAttachment: "fixed",
-        //     // minHeight: "100vh",
-        //   }
-        // }
+        // style={{
+        //   // backgroundImage: "url('/landscape-scene.jpg')",
+        //   // backgroundImage: "url('/illustration-anime-city.jpg')",
+        //   backgroundSize: "cover",
+        //   backgroundPosition: "center",
+        //   backgroundRepeat: "no-repeat",
+        //   backgroundAttachment: "fixed",
+        //   minHeight: "100vh",
+        // }}
       >
+        <AuroraBackground />
         <ThemeProvider>
-          <AuroraBackground>
-            <SidebarProvider>
-              <AppSidebar />
-              <main className="w-full">
-                <NavigationMenu />
-                <Toaster richColors duration={5000} closeButton />
-                {children}
-              </main>
-            </SidebarProvider>
-          </AuroraBackground>
+          <SidebarProvider>
+            <AppSidebar />
+            <main className="relative w-full">
+              <NavigationMenu />
+              <Toaster richColors duration={5000} closeButton />
+              {children}
+            </main>
+          </SidebarProvider>
         </ThemeProvider>
       </body>
     </html>

@@ -9,6 +9,7 @@ import {
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
+import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { Command } from "../form/command";
 import { aboutList, toolList } from "./navMenuConstants";
@@ -20,7 +21,11 @@ import { ThemeChanger } from "./themeChanger";
 export function NavigationMenu() {
   return (
     <NavigationMenuPrimitive
-      className="sticky top-0 justify-between pt-4 pb-2 border-b-2 border-black dark:border-white backdrop-blur-sm"
+      className={cn(
+        "sticky top-0 z-40 justify-between pt-4 pb-2 px-2",
+        "border-b-2 rounded border-black dark:border-white", // Handles Border of Navigation Menu
+        "backdrop-blur-sm dark:bg-zinc-900/50" // Handles Background of Navigation Menu
+      )}
       viewport={false}
     >
       <NavigationMenuList>
