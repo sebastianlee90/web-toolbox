@@ -2,6 +2,7 @@
 @import "tw-animate-css";
 @import "../lib/css/github-markdown-light.css";
 @import "../lib/css/github-markdown-dark.css";
+@import "../lib//css/aurora.css";
 
 @custom-variant dark (&:is(.dark *));
 

@@ -1,5 +1,6 @@
 import { AppSidebar } from "@/components/layout/appSideBar";
 import { NavigationMenu } from "@/components/layout/navMenu";
+import { AuroraBackground } from "@/components/ui/aurora-background";
 import { SidebarProvider } from "@/components/ui/sidebar";
 import { ThemeProvider } from "@/components/ui/themeProvider";
 import type { Metadata } from "next";
@@ -31,20 +32,21 @@ export default function RootLayout({
     <html lang="en" className="light" style={{ colorScheme: "light" }}>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-        style={{
-          // backgroundImage: "url('/landscape-scene.jpg')",
-          // backgroundImage: "url('/illustration-anime-city.jpg')",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          backgroundRepeat: "no-repeat",
-          backgroundAttachment: "fixed",
-          minHeight: "100vh",
-        }}
+        // style={{
+        //   // backgroundImage: "url('/landscape-scene.jpg')",
+        //   // backgroundImage: "url('/illustration-anime-city.jpg')",
+        //   backgroundSize: "cover",
+        //   backgroundPosition: "center",
+        //   backgroundRepeat: "no-repeat",
+        //   backgroundAttachment: "fixed",
+        //   minHeight: "100vh",
+        // }}
       >
+        <AuroraBackground />
         <ThemeProvider>
           <SidebarProvider>
             <AppSidebar />
-            <main className="w-full">
+            <main className="relative w-full">
               <NavigationMenu />
               <Toaster richColors duration={5000} closeButton />
               {children}
