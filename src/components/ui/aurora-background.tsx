@@ -13,13 +13,7 @@ export function AuroraBackground({
   ...props
 }: AuroraBackgroundProps) {
   return (
-    <div
-      className={cn(
-        "relative overflow-hidden bg-white dark:bg-zinc-900",
-        className
-      )}
-      {...props}
-    >
+    <div className={cn("relative", className)} {...props}>
       <div
         className={cn(
           "fixed top-0 left-0 w-full h-full opacity-75",
