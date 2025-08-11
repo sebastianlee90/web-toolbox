@@ -22,7 +22,7 @@ export function NavigationMenu() {
   return (
     <NavigationMenuPrimitive
       className={cn(
-        "sticky top-0 z-40 justify-between pt-4 pb-2 px-2",
+        "sticky top-0 z-40 justify-between p-2",
         "border-b-2 rounded border-black dark:border-white", // Handles Border of Navigation Menu
         "backdrop-blur-sm dark:bg-zinc-900/50" // Handles Background of Navigation Menu
       )}
