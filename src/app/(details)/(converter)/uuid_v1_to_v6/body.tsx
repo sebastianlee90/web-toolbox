@@ -13,14 +13,13 @@ export function Body() {
     <div className="border border-black p-4 rounded-xl flex flex-col gap-4">
       <Input
         label="Namespace"
-        labelClassName="flex font-bold text-xl ml-2 text-gray-600 dark:text-gray-300 items-center text-nowrap"
+        labelClassName="flex font-bold text-xl ml-2 items-center text-nowrap"
         placeholder="The namespace must be a valid UUIDs in the format 00000000-0000-0000-0000-000000000000."
         value={form.input ?? ""}
         onChange={(e) =>
           setForm((prevValue) => ({ ...prevValue, input: e.target.value }))
         }
       />
-
       <div className="grid grid-cols-3 gap-4 items-center">
         <div className="flex gap-2">
           <Button

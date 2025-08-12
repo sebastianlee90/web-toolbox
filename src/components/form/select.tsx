@@ -53,7 +53,7 @@ export function Select({
         <label
           htmlFor={`${name}-select`}
           className={cn(
-            "flex text-sm text-gray-600 dark:text-gray-300 justify-start text-nowrap",
+            "flex text-sm text-primary justify-start text-nowrap",
             (labelPosition === "top" || labelPosition === "bottom") && "ml-2",
             labelClassName
           )}

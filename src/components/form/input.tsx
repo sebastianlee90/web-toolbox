@@ -46,7 +46,7 @@ export default function Input({
         <label
           htmlFor={`${name}-input`}
           className={cn(
-            "flex text-sm text-gray-600 dark:text-gray-300 items-center text-nowrap",
+            "flex text-sm text-primary items-center text-nowrap",
             (labelPosition === "top" || labelPosition === "bottom") && "ml-2",
             labelClassName
           )}
@@ -74,7 +74,7 @@ export default function Input({
             <input
               {...rest}
               className={cn(
-                "block h-full w-full rounded-md border py-1 pl-2 text-base md:text-sm focus:border-slate-500 focus:outline-hidden focus:ring-slate-500 dark:border-slate-600 dark:bg-slate-800",
+                "block h-full w-full rounded-md border py-2 pl-2 text-base md:text-sm focus:border-slate-500 focus:outline-hidden focus:ring-slate-500 dark:border-slate-600 bg-accent/70",
                 error
                   ? "border-red-300 pr-10 text-destructive"
                   : "border-gray-300 pr-2 text-foreground",

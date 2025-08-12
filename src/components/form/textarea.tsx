@@ -40,7 +40,7 @@ export function Textarea({
           <label
             htmlFor={`${name}-textarea`}
             className={cn(
-              "flex text-sm text-gray-600 dark:text-gray-300 items-center text-nowrap ml-2",
+              "flex text-sm text-primary items-center text-nowrap ml-2",
               labelClassName
             )}
           >
@@ -51,7 +51,7 @@ export function Textarea({
           {copy && (
             <Button
               title="Copy"
-              className="border-none size-6"
+              className="border-none size-7"
               variant="outline"
               type="button"
               onClick={() => copyToClipboard(props.value?.toString() ?? "")}

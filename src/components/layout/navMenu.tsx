@@ -10,6 +10,7 @@ import {
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 import { cn } from "@/lib/utils";
+import { HomeIcon } from "lucide-react";
 import Link from "next/link";
 import { Command } from "../form/command";
 import { aboutList, toolList } from "./navMenuConstants";
@@ -34,7 +35,9 @@ export function NavigationMenu() {
         </NavigationMenuItem> */}
         <NavigationMenuItem>
           <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
-            <Link href="/">Web Toolbox</Link>
+            <Link href="/">
+              <HomeIcon className="size-4 text-accent-foreground" />
+            </Link>
           </NavigationMenuLink>
         </NavigationMenuItem>
         <NavigationMenuItem>

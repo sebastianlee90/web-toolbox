@@ -39,13 +39,12 @@ export function Body() {
           {bases.map(({ label }) => (
             <div
               key={label}
-              className="flex items-center justify-between border rounded-xl p-2 gap-2 bg-slate-50 "
+              className="flex items-center justify-between border rounded-xl p-2 gap-2 bg-accent/70"
             >
-              <p className="text-foreground dark:text-background font-mono font-bold">
+              <p className="text-foreground font-mono font-bold">
                 {label.charAt(0).toUpperCase() + label.slice(1)}:
               </p>
               <Input
-                className="border-none"
                 value={input[label]}
                 onChange={(e) => {
                   handleConvert(label, e.currentTarget.value);

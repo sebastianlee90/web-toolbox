@@ -13,7 +13,7 @@ export function Body() {
 
   return (
     <div className="border border-black p-4 rounded-xl flex flex-col gap-4">
-      <div className="flex flex-row gap-4 rounded-xl dark:bg-slate-200 bg-slate-100 p-4">
+      <div className="flex flex-row gap-4 rounded-xl bg-accent/70 p-4">
         <Switch
           label="Encode by line"
           labelPosition="right"
