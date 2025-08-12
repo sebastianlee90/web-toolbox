@@ -6,7 +6,6 @@ import {
   Dna,
   FileCode2,
   FileDigit,
-  HomeIcon,
   LockIcon,
   LockOpen,
   LucideIcon,
@@ -26,7 +25,7 @@ export type NavType = {
 };
 
 export const appSideBarItems: NavType[] = [
-  { id: "home", name: "Home", href: "/", icon: HomeIcon },
+  // { id: "home", name: "Home", href: "/", icon: HomeIcon },
   {
     id: "converter",
     name: "Converter",

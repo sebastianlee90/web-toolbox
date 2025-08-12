@@ -16,9 +16,15 @@ import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Logo } from "../icons/logo";
+import { Badge } from "../ui/badge";
 import { appSideBarItems } from "./appSideBarItems";
 
 export function AppSidebar() {
+  const totalTools = appSideBarItems.reduce(
+    (acc, item) => acc + (item.children ? item.children.length : 0),
+    0
+  );
+
   return (
     <Sidebar>
       <SidebarHeader>
@@ -28,6 +34,10 @@ export function AppSidebar() {
             <span className="mt-0.5">Web Toolbox</span>
           </p>
           <SidebarTrigger />
+        </div>
+        <div className="mt-4 flex flex-row justify-between px-2 pb-1 items-center text-primary font-medium group-data-[collapsible=icon]:hidden border-b ">
+          <p>All Tools</p>
+          <Badge variant="success">{totalTools} tools</Badge>
         </div>
       </SidebarHeader>
       <SidebarContent>
