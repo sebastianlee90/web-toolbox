@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      '@ctrl/react-adsense':
+        specifier: ^2.0.0
+        version: 2.0.0
       '@radix-ui/react-dialog':
         specifier: ^1.1.14
         version: 1.1.14(@types/react-dom@19.1.7(@types/react@19.1.10))(@types/react@19.1.10)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
@@ -134,6 +137,9 @@ packages:
   '@babel/runtime@7.28.2':
     resolution: {integrity: sha512-KHp2IflsnGywDjBWDkR9iEqiWSpc8GIi0lgTT3mOElT0PP1tG26P4tmFI2YvAdzgq9RGyoHZQEIEdZy6Ec5xCA==}
     engines: {node: '>=6.9.0'}
+
+  '@ctrl/react-adsense@2.0.0':
+    resolution: {integrity: sha512-eZrgMAWFwnUhuJjGnD+IQw/uCXNA1qZNcTpuLwxenWGGenGxjnLniqmFKbpp9vQ3sViBqNDfL45ijkHSPW3r0A==}
 
   '@emnapi/core@1.4.5':
     resolution: {integrity: sha512-XsLw1dEOpkSX/WucdqUhPWP7hDxSvZiY+fsUC14h+FtQ2Ifni4znbBt8punRX+Uj2JG/uDb8nEHVKvrVlvdZ5Q==}
@@ -2800,6 +2806,10 @@ snapshots:
       '@jridgewell/trace-mapping': 0.3.30
 
   '@babel/runtime@7.28.2': {}
+
+  '@ctrl/react-adsense@2.0.0':
+    dependencies:
+      tslib: 2.8.1
 
   '@emnapi/core@1.4.5':
     dependencies:
