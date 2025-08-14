@@ -1,7 +1,6 @@
-import { AppSidebar } from "@/components/layout/appSideBar";
 import { Background } from "@/components/layout/background";
 import { NavigationMenu } from "@/components/layout/navMenu";
-import { SidebarProvider } from "@/components/ui/sidebar";
+import { SideBarWrapper } from "@/components/layout/sideBarWrapper";
 import { ThemeProvider } from "@/components/ui/themeProvider";
 import type { Metadata } from "next";
 import { Roboto } from "next/font/google";
@@ -49,14 +48,13 @@ export default function RootLayout({
       >
         <Background />
         <ThemeProvider>
-          <SidebarProvider>
-            <AppSidebar />
+          <SideBarWrapper>
             <main className="relative w-full">
               <NavigationMenu />
               <Toaster richColors duration={5000} closeButton />
               {children}
             </main>
-          </SidebarProvider>
+          </SideBarWrapper>
         </ThemeProvider>
       </body>
     </html>
