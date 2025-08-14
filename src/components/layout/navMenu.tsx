@@ -12,8 +12,8 @@ import {
 import { cn } from "@/lib/utils";
 import { HomeIcon } from "lucide-react";
 import Link from "next/link";
+import { aboutList, toolList } from "../../constants/layout/navMenuConstants";
 import { Command } from "../form/command";
-import { aboutList, toolList } from "./navMenuConstants";
 import { ListItem } from "./navMenuListItem";
 import { ThemeChanger } from "./themeChanger";
 // import { SidebarTrigger } from "../ui/sidebar";

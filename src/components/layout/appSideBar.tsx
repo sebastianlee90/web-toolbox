@@ -15,9 +15,9 @@ import {
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { appSideBarItems } from "../../constants/layout/appSideBarItems";
 import { Logo } from "../icons/logo";
 import { Badge } from "../ui/badge";
-import { appSideBarItems } from "./appSideBarItems";
 
 export function AppSidebar() {
   const totalTools = appSideBarItems.reduce(
