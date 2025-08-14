@@ -1,6 +1,6 @@
 import { AppSidebar } from "@/components/layout/appSideBar";
+import { Background } from "@/components/layout/background";
 import { NavigationMenu } from "@/components/layout/navMenu";
-import { AuroraBackground } from "@/components/ui/aurora-background";
 import { SidebarProvider } from "@/components/ui/sidebar";
 import { ThemeProvider } from "@/components/ui/themeProvider";
 import type { Metadata } from "next";
@@ -37,17 +37,17 @@ export default function RootLayout({
     <html lang="en" className="light" style={{ colorScheme: "light" }}>
       <body
         className={`${roboto.variable} antialiased`}
-        // style={{
-        //   // backgroundImage: "url('/landscape-scene.jpg')",
-        //   // backgroundImage: "url('/illustration-anime-city.jpg')",
-        //   backgroundSize: "cover",
-        //   backgroundPosition: "center",
-        //   backgroundRepeat: "no-repeat",
-        //   backgroundAttachment: "fixed",
-        //   minHeight: "100vh",
-        // }}
+        style={{
+          // backgroundImage: "url('/landscape-scene.jpg')",
+          // backgroundImage: "url('/illustration-anime-city.jpg')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+          backgroundAttachment: "fixed",
+          minHeight: "100vh",
+        }}
       >
-        <AuroraBackground />
+        <Background />
         <ThemeProvider>
           <SidebarProvider>
             <AppSidebar />
