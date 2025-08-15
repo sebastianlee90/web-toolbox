@@ -1,20 +1,21 @@
+import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { MessageCircleHeart } from "lucide-react";
 import Link from "next/link";
 
 export default function Page() {
+  const headerClassName = "font-bold text-2xl pb-2 border-b border-foreground";
+
   return (
     <div className="flex justify-center">
       <div
         className={cn(
-          "border border-foreground rounded-xl w-[70%]", // Border parameters
+          "border border-foreground rounded-xl w-[60%]", // Border parameters
           "flex flex-col p-4 gap-10" // Content parameters
         )}
       >
         <div className="flex flex-col">
-          <h1 className="font-bold text-2xl pb-2 border-b border-foreground">
-            About the Developer
-          </h1>
+          <h1 className={headerClassName}>About the Developer</h1>
           <p className="mt-2">
             Hi, I’m Selean!
             <br />
@@ -35,10 +36,15 @@ export default function Page() {
             challenge.
           </p>
         </div>
+        <div className="flex flex-col gap-4">
+          <h1 className={headerClassName}>Tools Request Submission</h1>
+          <div className="grid grid-cols-3 gap-4">
+            <div />
+            <Button title="Submit Request">Submit Request</Button>
+          </div>
+        </div>
         <div className="flex flex-col">
-          <h1 className="font-bold text-2xl pb-2 border-b border-foreground">
-            Technology
-          </h1>
+          <h1 className={headerClassName}>Technology</h1>
           <p className="mt-2 flex flex-row gap-1">
             Built with
             <Link
