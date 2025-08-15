@@ -40,19 +40,16 @@ export function NavigationMenu() {
         </NavigationMenuItem> */}
         <NavigationMenuItem>
           <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-            <>
-              {renderIcon && (
-                <Link href="/">
-                  <HomeIcon className="size-4 text-accent-foreground" />
-                </Link>
-              )}
-              {!renderIcon && (
-                <Link href="/" className="flex flex-row gap-2">
-                  <Logo className="size-6 text-foreground" />
-                  <span className="mt-0.5">Web Toolbox</span>
-                </Link>
-              )}
-            </>
+            {renderIcon ? (
+              <Link href="/">
+                <HomeIcon className="size-4 text-accent-foreground" />
+              </Link>
+            ) : (
+              <Link href="/" className="flex flex-row gap-2">
+                <Logo className="size-6 text-foreground" />
+                <span className="mt-0.5">Web Toolbox</span>
+              </Link>
+            )}
           </NavigationMenuLink>
         </NavigationMenuItem>
         <NavigationMenuItem>
