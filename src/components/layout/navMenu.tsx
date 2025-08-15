@@ -9,17 +9,22 @@ import {
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
-import { cn } from "@/lib/utils";
+import { cn, toRenderSideBar } from "@/lib/utils";
 import { HomeIcon } from "lucide-react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { aboutList, toolList } from "../../constants/layout/navMenuConstants";
 import { Command } from "../form/command";
+import { Logo } from "../icons/logo";
 import { ListItem } from "./navMenuListItem";
 import { ThemeChanger } from "./themeChanger";
 // import { SidebarTrigger } from "../ui/sidebar";
 // import { CircleCheckIcon, CircleHelpIcon, CircleIcon } from "lucide-react";
 
 export function NavigationMenu() {
+  const pathName = usePathname();
+  const renderIcon = toRenderSideBar(pathName);
+
   return (
     <NavigationMenuPrimitive
       className={cn(
@@ -34,10 +39,20 @@ export function NavigationMenu() {
           <SidebarTrigger />
         </NavigationMenuItem> */}
         <NavigationMenuItem>
-          <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
-            <Link href="/">
-              <HomeIcon className="size-4 text-accent-foreground" />
-            </Link>
+          <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+            <>
+              {renderIcon && (
+                <Link href="/">
+                  <HomeIcon className="size-4 text-accent-foreground" />
+                </Link>
+              )}
+              {!renderIcon && (
+                <Link href="/" className="flex flex-row gap-2">
+                  <Logo className="size-6 text-foreground" />
+                  <span className="mt-0.5">Web Toolbox</span>
+                </Link>
+              )}
+            </>
           </NavigationMenuLink>
         </NavigationMenuItem>
         <NavigationMenuItem>
