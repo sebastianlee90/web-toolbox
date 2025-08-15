@@ -1,5 +1,54 @@
+import { cn } from "@/lib/utils";
+import { MessageCircleHeart } from "lucide-react";
+import Link from "next/link";
+
 export default function Page() {
   return (
-    <div className="flex h-screen items-center justify-center">About Page</div>
+    <div className="flex justify-center">
+      <div
+        className={cn(
+          "border border-black rounded-xl w-[70%]", // Border parameters
+          "flex flex-col p-4 gap-10" // Content parameters
+        )}
+      >
+        <div className="flex flex-col">
+          <h1 className="font-bold text-2xl">About the Developer</h1>
+          <hr className="my-2 font-black" />
+          <p>
+            Hi, I’m Selean!
+            <br />
+            <br />
+            A late boomer that joined the web development world a little later
+            than most, but I’m diving in headfirst—powered by curiosity,
+            caffeine, and a love for creating.
+            <br />
+            <br />
+            This site is my personal playground and portfolio, where I build
+            practical (and sometimes just-for-fun) tools with the React
+            framework. Each project here helps me learn, experiment, and
+            hopefully make someone’s day a little easier.
+            <br />
+            <br />
+            If you’ve got an idea for a tool—whether it’s something genuinely
+            useful or wonderfully quirky—send it my way. I’m always up for the
+            challenge.
+          </p>
+        </div>
+        <div className="flex flex-col">
+          <h1 className="font-bold text-2xl">Technology</h1>
+          <hr className="my-2 font-black" />
+          <p className="flex flex-row gap-1">
+            Built with
+            <Link
+              href="https://react.dev"
+              className="font-semibold text-blue-700 hover:underline"
+            >
+              React
+            </Link>
+            <MessageCircleHeart className="ml-1 size-5" />
+          </p>
+        </div>
+      </div>
+    </div>
   );
 }
