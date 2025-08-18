@@ -1,3 +1,4 @@
+import { Footer } from "@/components/form/footer";
 import { AppSidebar } from "@/components/layout/appSideBar";
 import { NavigationMenu } from "@/components/layout/navMenu";
 import { AuroraBackground } from "@/components/ui/aurora-background";
@@ -55,6 +56,7 @@ export default function RootLayout({
               <NavigationMenu />
               <Toaster richColors duration={5000} closeButton />
               {children}
+              <Footer />
             </main>
           </SidebarProvider>
         </ThemeProvider>
