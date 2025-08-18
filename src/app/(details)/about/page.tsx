@@ -53,6 +53,13 @@ export default function Page() {
             >
               React
             </Link>
+            &
+            <Link
+              href="https://nodejs.org/en"
+              className="font-semibold text-blue-600 hover:underline"
+            >
+              NodeJs
+            </Link>
             <MessageCircleHeart className="ml-1 size-5" />
           </p>
         </div>
