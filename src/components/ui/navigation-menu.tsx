@@ -64,7 +64,8 @@ const navigationMenuTriggerStyle = cva(
     "hover:bg-accent/70 hover:text-accent-foreground",
     "focus:bg-accent/70 focus:text-accent-foreground focus-visible:ring-ring/50 outline-none transition-[color,box-shadow] focus-visible:ring-[3px] focus-visible:outline-1",
     "disabled:pointer-events-none disabled:opacity-50",
-    "data-[state=open]:text-accent-foreground data-[state=open]:focus:bg-accent/70 data-[state=open]:bg-accent/70 data-[state=open]:hover:bg-accent/70"
+    "data-[state=open]:text-accent-foreground data-[state=open]:focus:bg-accent/70 data-[state=open]:bg-accent/70 data-[state=open]:hover:bg-accent/70",
+    "flex flex-row gap-2"
   )
 );
 
