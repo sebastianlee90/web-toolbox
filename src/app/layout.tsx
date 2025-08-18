@@ -1,3 +1,4 @@
+import { Footer } from "@/components/form/footer";
 import { Background } from "@/components/layout/background";
 import { NavigationMenu } from "@/components/layout/navMenu";
 import { SideBarWrapper } from "@/components/layout/sideBarWrapper";
@@ -53,6 +54,7 @@ export default function RootLayout({
               <NavigationMenu />
               <Toaster richColors duration={5000} closeButton />
               {children}
+              <Footer />
             </main>
           </SideBarWrapper>
         </ThemeProvider>
