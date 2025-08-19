@@ -11,7 +11,7 @@ import {
 import { MagnifyingGlassIcon } from "@radix-ui/react-icons";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { appSideBarItems } from "../layout/appSideBarItems";
+import { appSideBarItems } from "../../constants/layout/appSideBarItems";
 
 export function Command() {
   const [open, setOpen] = useState(false);

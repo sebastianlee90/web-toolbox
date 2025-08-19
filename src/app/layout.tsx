@@ -1,8 +1,7 @@
 import { Footer } from "@/components/form/footer";
-import { AppSidebar } from "@/components/layout/appSideBar";
+import { Background } from "@/components/layout/background";
 import { NavigationMenu } from "@/components/layout/navMenu";
-import { AuroraBackground } from "@/components/ui/aurora-background";
-import { SidebarProvider } from "@/components/ui/sidebar";
+import { SideBarWrapper } from "@/components/layout/sideBarWrapper";
 import { ThemeProvider } from "@/components/ui/themeProvider";
 import type { Metadata } from "next";
 import { Roboto } from "next/font/google";
@@ -48,17 +47,16 @@ export default function RootLayout({
         //   minHeight: "100vh",
         // }}
       >
-        <AuroraBackground />
+        <Background />
         <ThemeProvider>
-          <SidebarProvider>
-            <AppSidebar />
+          <SideBarWrapper>
             <main className="relative w-full">
               <NavigationMenu />
               <Toaster richColors duration={5000} closeButton />
               {children}
               <Footer />
             </main>
-          </SidebarProvider>
+          </SideBarWrapper>
         </ThemeProvider>
       </body>
     </html>
