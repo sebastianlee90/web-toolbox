@@ -37,15 +37,15 @@ export default function RootLayout({
     <html lang="en" className="light" style={{ colorScheme: "light" }}>
       <body
         className={`${roboto.variable} antialiased`}
-        style={{
-          // backgroundImage: "url('/landscape-scene.jpg')",
-          // backgroundImage: "url('/illustration-anime-city.jpg')",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          backgroundRepeat: "no-repeat",
-          backgroundAttachment: "fixed",
-          minHeight: "100vh",
-        }}
+        // style={{
+        //   // backgroundImage: "url('/landscape-scene.jpg')",
+        //   // backgroundImage: "url('/illustration-anime-city.jpg')",
+        //   backgroundSize: "cover",
+        //   backgroundPosition: "center",
+        //   backgroundRepeat: "no-repeat",
+        //   backgroundAttachment: "fixed",
+        //   minHeight: "100vh",
+        // }}
       >
         <Background />
         <ThemeProvider>
