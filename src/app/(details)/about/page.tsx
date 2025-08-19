@@ -11,13 +11,14 @@ export default function Page() {
       <div
         className={cn(
           "border border-foreground rounded-xl w-[60%]", // Border parameters
-          "flex flex-col p-4 gap-10" // Content parameters
+          "flex flex-col p-4 gap-10", // Content parameters
+          "backdrop-blur-xl bg-zinc-900/30" // Background parameters
         )}
       >
         <div className="flex flex-col">
           <h1 className={headerClassName}>About the Developer</h1>
           <p className="mt-2">
-            Hi, I’m Selean!
+            Hi there, Selean here!
             <br />
             <br />
             A late boomer that joined the web development world a little later
