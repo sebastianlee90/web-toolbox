@@ -12,15 +12,15 @@ import {
   SidebarMenuSub,
   SidebarTrigger,
 } from "@/components/ui/sidebar";
+import { toolsList } from "@/constants/toolsList";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { appSideBarItems } from "../../constants/layout/appSideBarItems";
 import { Logo } from "../icons/logo";
 import { Badge } from "../ui/badge";
 
 export function AppSidebar() {
-  const totalTools = appSideBarItems.reduce(
+  const totalTools = toolsList.reduce(
     (acc, item) => acc + (item.children ? item.children.length : 0),
     0
   );
@@ -43,7 +43,7 @@ export function AppSidebar() {
       <SidebarContent>
         <SidebarGroup>
           <SidebarMenu>
-            {appSideBarItems.map((item) => (
+            {toolsList.map((item) => (
               <NavItem key={item.name} item={item} />
             ))}
           </SidebarMenu>
@@ -58,7 +58,7 @@ function NavItem({
   item,
   child,
 }: {
-  item: (typeof appSideBarItems)[0];
+  item: (typeof toolsList)[0];
   child?: boolean;
 }) {
   const pathname = usePathname();

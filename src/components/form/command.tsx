@@ -8,10 +8,10 @@ import {
   CommandItem,
   CommandList,
 } from "@/components/ui/command";
+import { toolsList } from "@/constants/toolsList";
 import { MagnifyingGlassIcon } from "@radix-ui/react-icons";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { appSideBarItems } from "../../constants/layout/appSideBarItems";
 
 export function Command() {
   const [open, setOpen] = useState(false);
@@ -28,7 +28,7 @@ export function Command() {
     return () => document.removeEventListener("keydown", down);
   }, []);
 
-  const searchContent = appSideBarItems
+  const searchContent = toolsList
     .filter((item) => item.children) // Only include items with children
     .map((item) => (
       <CommandGroup key={item.name} heading={item.name}>

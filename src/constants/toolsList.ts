@@ -14,17 +14,17 @@ import {
   ScanEye,
 } from "lucide-react";
 
-export type NavType = {
+type toolsType = {
   id?: string;
   name: string;
   current?: boolean;
   icon?: LucideIcon;
-  children?: NavType[];
+  children?: toolsType[];
   href: string;
   desciption?: string;
 };
 
-export const appSideBarItems: NavType[] = [
+export const toolsList: toolsType[] = [
   // { id: "home", name: "Home", href: "/", icon: HomeIcon },
   {
     id: "converter",
