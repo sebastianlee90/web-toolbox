@@ -6,13 +6,13 @@ import { SidebarProvider } from "../ui/sidebar";
 import { AppSidebar } from "./appSideBar";
 
 export function SideBarWrapper({ children }: { children: React.ReactNode }) {
-  const pathname = usePathname();
-  const toRender = toRenderSideBar(pathname);
+  const pathName = usePathname();
+  const toRender = toRenderSideBar(pathName);
 
   return (
     <>
       {toRender ? (
-        <SidebarProvider>
+        <SidebarProvider defaultOpen={pathName !== "/"}>
           <AppSidebar />
           {children}
         </SidebarProvider>
