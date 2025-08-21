@@ -1,17 +1,31 @@
 export const FAQ_QNA = [
   {
-    question: "What makes your platform unique?",
+    question: "What is Web Toolbox?",
     answer:
-      "Our platform stands out through its intuitive design, powerful automation capabilities, and seamless integration options. We've focused on creating a user experience that combines simplicity with advanced features.",
+      "Web ToolBox is a collection of online tools that anyone can use for free🧰. There are currently 7 web development tools to help developers work more efficiently👌.",
   },
   {
-    question: "How does the pricing structure work?",
-    answer:
-      "We offer flexible, transparent pricing tiers designed to scale with your needs. Each tier includes a core set of features, with additional capabilities as you move up. All plans start with a 14-day free trial.",
+    question: "Is this service free of charge?",
+    answer: "Yes, all tools in the Web ToolBox are free of charge.",
   },
   {
-    question: "What kind of support do you offer?",
+    question: "Do I need an account to use the site?",
     answer:
-      "We provide comprehensive support through multiple channels. This includes 24/7 live chat, detailed documentation, video tutorials, and dedicated account managers for enterprise clients.",
+      "No account registration is required. You can start using the tool immediately 🚀.",
+  },
+  {
+    question: "How is the data handled?",
+    answer:
+      "At Web ToolBox, user privacy is important to us. Currently, all the tools run entirely in the browser and do not transmit data to the server.",
+  },
+  {
+    question: "Which browser can Web Toolbox be used in?",
+    answer:
+      "Web ToolBox is designed to work best with the latest versions of Google Chrome, Firefox, Microsoft Edge, and Safari. Older versions and some browsers may not work all functions properly.",
+  },
+  {
+    question: "Are there plans to add new tools or features?",
+    answer:
+      "Yes, we plan to add new tools and features from time to time. Please send us your tool requests and feedback so we can help with future development😉",
   },
 ];
