@@ -5,12 +5,14 @@ import React, { useMemo, useRef, useState } from "react";
 
 export function BackgroundRippleEffect({
   rows = 8,
-  cols = 27,
+  cols = 27, // TODO: Column value needs to be dynamically calculated based on the width of the container
   cellSize = 56,
+  children,
 }: {
   rows?: number;
   cols?: number;
   cellSize?: number;
+  children?: React.ReactNode;
 }) {
   const [clickedCell, setClickedCell] = useState<{
     row: number;
@@ -24,13 +26,15 @@ export function BackgroundRippleEffect({
     <section
       ref={ref}
       className={cn(
-        "absolute inset-0 h-full w-full",
+        "h-full w-full",
         "[--cell-border-color:var(--color-neutral-300)] [--cell-fill-color:var(--color-neutral-100)] [--cell-shadow-color:var(--color-neutral-500)]",
         "dark:[--cell-border-color:var(--color-neutral-700)] dark:[--cell-fill-color:var(--color-neutral-900)] dark:[--cell-shadow-color:var(--color-neutral-800)]"
       )}
     >
       <div className="relative h-auto w-auto overflow-hidden">
-        <div className="pointer-events-none absolute inset-0 z-[2] h-full w-full overflow-hidden" />
+        <div className="flex justify-center items-center pointer-events-none absolute inset-0 z-[2] h-full w-full overflow-hidden">
+          {children}
+        </div>
         <DivGrid
           key={`base-${rippleKey}`}
           className="mask-radial-from-20% mask-radial-at-top opacity-600"
@@ -115,7 +119,7 @@ function DivGrid({
           <div
             key={idx}
             className={cn(
-              "cell relative border-[0.5px] opacity-40 transition-opacity duration-150 will-change-transform hover:opacity-80 dark:shadow-[0px_0px_40px_1px_var(--cell-shadow-color)_inset]",
+              "cell relative border-[0.5px] opacity-20 transition-opacity duration-150 will-change-transform hover:opacity-50 dark:shadow-[0px_0px_40px_1px_var(--cell-shadow-color)_inset]",
               clickedCell && "animate-cell-ripple [animation-fill-mode:none]",
               !interactive && "pointer-events-none"
             )}
