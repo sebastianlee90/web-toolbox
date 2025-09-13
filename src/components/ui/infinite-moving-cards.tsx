@@ -18,12 +18,14 @@ export function InfiniteMovingCards({
 }) {
   const containerRef = React.useRef<HTMLDivElement>(null);
   const scrollerRef = React.useRef<HTMLUListElement>(null);
-  const allTools = toolsList.reduce<toolsType[]>((acc, item) => {
-    if (item.children) {
-      return [...acc, ...item.children];
-    }
-    return acc;
-  }, []);
+  const allTools = toolsList
+    .reduce<toolsType[]>((acc, item) => {
+      if (item.children) {
+        return [...acc, ...item.children];
+      }
+      return acc;
+    }, [])
+    .sort(() => Math.random() - 0.5); // Randomize the order of objects in the array
 
   useEffect(() => {
     addAnimation();
