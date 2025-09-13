@@ -28,9 +28,7 @@ export function Faq({ title, description, items, ...props }: FaqSectionProps) {
         transition={{ duration: 0.5 }}
         className="max-w-2xl mx-auto text-center mb-12"
       >
-        <h2 className="text-3xl font-semibold mb-3 text-foreground/70">
-          {title}
-        </h2>
+        <h2 className="text-3xl font-semibold mb-3 text-foreground">{title}</h2>
         {description && (
           <p className="text-sm text-muted-foreground">{description}</p>
         )}
