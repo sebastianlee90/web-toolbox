@@ -103,7 +103,7 @@ export function InfiniteMovingCards({
             <Link
               className={cn(
                 "flex flex-row p-3 gap-2 w-full h-full items-center text-nowrap",
-                "rounded-2xl border-2 border-secondary hover:border-blue-400"
+                "rounded-xl border-2 border-secondary hover:border-blue-400"
               )}
               href={item.href}
             >
