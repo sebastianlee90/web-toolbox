@@ -7,7 +7,7 @@ import React, { useEffect, useState } from "react";
 
 export function InfiniteMovingCards({
   direction = "left",
-  speed = "normal",
+  speed = "fast",
   pauseOnHover = true,
   className,
 }: {
@@ -18,14 +18,13 @@ export function InfiniteMovingCards({
 }) {
   const containerRef = React.useRef<HTMLDivElement>(null);
   const scrollerRef = React.useRef<HTMLUListElement>(null);
-  const allTools = toolsList
-    .reduce<toolsType[]>((acc, item) => {
-      if (item.children) {
-        return [...acc, ...item.children];
-      }
-      return acc;
-    }, [])
-    .sort(() => Math.random() - 0.5); // Randomize the order of objects in the array
+  const allTools = toolsList.reduce<toolsType[]>((acc, item) => {
+    if (item.children) {
+      return [...acc, ...item.children];
+    }
+    return acc;
+  }, []);
+  // .sort(() => Math.random() - 0.5); // Randomize the order of objects in the array
 
   useEffect(() => {
     addAnimation();
