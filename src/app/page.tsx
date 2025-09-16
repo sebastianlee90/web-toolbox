@@ -1,4 +1,5 @@
 import { Faq } from "@/components/form/faq";
+import { ToolListSelection } from "@/components/form/toolListSelection";
 import { Logo } from "@/components/icons/logo";
 import { BackgroundRippleEffect } from "@/components/ui/background-ripple-effect";
 import { CardSpotlight } from "@/components/ui/card-spotlight";
@@ -7,7 +8,7 @@ import { FAQ_QNA } from "@/constants/faqQnA";
 
 export default function Home() {
   return (
-    <div className="flex flex-col gap-20">
+    <div className="flex flex-col gap-20 font-semibold">
       {/* Hero Section */}
       <BackgroundRippleEffect>
         <div className="flex flex-col items-center justify-center w-full z-10">
@@ -22,35 +23,45 @@ export default function Home() {
       </BackgroundRippleEffect>
       {/* Quality Section */}
       {/* TODO: Finetune Content Displayed in the 3 cardspotlight section*/}
-      <div className="grid grid-cols-3 items-center justify-center gap-4">
-        <CardSpotlight className="h-[200px]">
-          <p>
-            🚀 Accelerate Your Development Dramatically boost your development
-            speed and efficiency with over 50 ready-to-use tools.
-          </p>
-        </CardSpotlight>
-        <CardSpotlight className="h-[200px]">
-          <p>
-            💻 Accessible Anytime, Anywhere Access from any device with just a
-            browser. Seamlessly support your digital work without any hassle.
-          </p>
-        </CardSpotlight>
-        <CardSpotlight className="h-[200px]">
-          <p>
-            🔐 Simple and Secure Utilize all features without registration. Use
-            with confidence under high security standards.
-          </p>
-        </CardSpotlight>
+      <div className="">
+        <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3 px-6">
+          <CardSpotlight className="h-[200px]">
+            <p>
+              🚀 Accelerate Your Development Dramatically boost your development
+              speed and efficiency with over 50 ready-to-use tools.
+            </p>
+          </CardSpotlight>
+          <CardSpotlight className="h-[200px]">
+            <p>
+              💻 Accessible Anytime, Anywhere Access from any device with just a
+              browser. Seamlessly support your digital work without any hassle.
+            </p>
+          </CardSpotlight>
+          <CardSpotlight className="h-[200px]">
+            <p>
+              🔐 Simple and Secure Utilize all features without registration.
+              Use with confidence under high security standards.
+            </p>
+          </CardSpotlight>
+        </div>
       </div>
       {/* Featured Tools Section */}
       <div className="flex flex-col gap-8">
         <h1 className="text-center text-xl md:text-2xl lg:text-4xl">
           🔥Featured Tools🔥
         </h1>
-        <InfiniteMovingCards direction="left" />
-        {/* Tools Section */}
-        <div className="flex items-center justify-center h-50 border border-foreground rounded-xl m-10">
-          Tools Section
+        <InfiniteMovingCards />
+      </div>
+      {/* Tools Section */}
+      <div className="flex flex-col gap-4 items-center">
+        <h1 className="text-center text-xl md:text-2xl lg:text-4xl">
+          🧰 All Tools 🛠️
+        </h1>
+        <h2 className="text-center text-sm md:text-md lg:text-xl">
+          Collection of handcrafted tools
+        </h2>
+        <div className="flex flex-col gap-4 px-6">
+          <ToolListSelection />
         </div>
       </div>
       {/* FAQ Section */}
