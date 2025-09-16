@@ -14,7 +14,7 @@ import {
   ScanEye,
 } from "lucide-react";
 
-type toolsType = {
+export type toolsType = {
   id?: string;
   name: string;
   current?: boolean;

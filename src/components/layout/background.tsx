@@ -15,7 +15,8 @@ export function Background({
 
   return (
     <div className={cn("relative", className)} {...props}>
-      {pathname === "/about" && ( // Only render the gif on the About page
+      {/* Only render the gif on the About page */}
+      {pathname === "/about" && (
         <div className="fixed w-full h-full">
           <Image
             className="w-full h-full"
