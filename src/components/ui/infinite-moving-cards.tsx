@@ -29,6 +29,7 @@ export function InfiniteMovingCards({
   useEffect(() => {
     addAnimation();
   }, []);
+
   const [start, setStart] = useState(false);
   function addAnimation() {
     if (containerRef.current && scrollerRef.current) {
@@ -90,28 +91,30 @@ export function InfiniteMovingCards({
         )}
       >
         {allTools.map((item) => (
-          <li
+          <Link
             key={item.id}
             className={cn(
-              "relative shrink-0 rounded-2xl p-1",
-              "max-w-full w-[300px] md:w-[300px]",
-              "border-3 border-ring",
-              "bg-secondary"
+              "relative shrink-0 p-3 flex flex-row gap-2 items-center text-nowrap min-w-[300px]",
+              "ring-3 rounded-2xl ring-muted-foreground/60",
+              "hover:inset-ring-blue-500 hover:inset-ring-2",
+              "group"
             )}
+            href={item.href}
           >
-            <Link
-              className={cn(
-                "flex flex-row p-3 gap-2 w-full h-full items-center text-nowrap",
-                "rounded-xl border-2 border-secondary hover:border-blue-400"
-              )}
-              href={item.href}
-            >
-              {item.icon ? <item.icon className="size-8" /> : null}
-              <span className="text-foreground text-lg font-semibold">
-                {item.name}
-              </span>
-            </Link>
-          </li>
+            {item.icon ? (
+              <div
+                className={cn(
+                  "ring-2 rounded-sm ring-muted-foreground/60",
+                  "group-hover:inset-ring-blue-500 group-hover:inset-ring-1"
+                )}
+              >
+                <item.icon className="size-[50px] text-primary" />
+              </div>
+            ) : null}
+            <span className="text-foreground text-lg font-semibold">
+              {item.name}
+            </span>
+          </Link>
         ))}
       </ul>
     </div>
