@@ -9,11 +9,13 @@ export function CardSpotlight({
   radius = 250,
   color = "#a2a8eb",
   className,
+  index = 1,
   ...props
 }: {
   radius?: number;
   color?: string;
   children: React.ReactNode;
+  index?: number;
 } & React.HTMLAttributes<HTMLDivElement>) {
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
@@ -33,7 +35,12 @@ export function CardSpotlight({
   const handleMouseLeave = () => setIsHovering(false);
 
   return (
-    <div className="border-2 rounded-3xl border-muted-foreground p-1.5 backdrop-blur-xl">
+    <motion.div
+      initial={{ opacity: 0, x: -100 }}
+      animate={{ opacity: 1, x: 0 }}
+      transition={{ duration: 0.4, delay: index * 0.4 }}
+      className="border-2 rounded-3xl border-muted-foreground p-1.5 backdrop-blur-xl"
+    >
       <div
         className={cn(
           "group/spotlight p-6 rounded-3xl relative border border-muted-foreground",
@@ -59,6 +66,6 @@ export function CardSpotlight({
         />
         {children}
       </div>
-    </div>
+    </motion.div>
   );
 }
