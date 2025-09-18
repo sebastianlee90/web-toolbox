@@ -22,26 +22,25 @@ export default function Home() {
         </div>
       </BackgroundRippleEffect>
       {/* Quality Section */}
-      {/* TODO: Finetune Content Displayed in the 3 cardspotlight section*/}
       <div className="">
         <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3 px-6">
-          <CardSpotlight className="h-[200px]">
+          <CardSpotlight className="flex flex-col gap-2 h-full">
+            <p className="text-4xl">🚀</p>
             <p>
-              🚀 Accelerate Your Development Dramatically boost your development
-              speed and efficiency with over 50 ready-to-use tools.
+              Accelerate Your Development Dramatically boost your development
+              speed and efficiency with 7 ready-to-use tools.
             </p>
           </CardSpotlight>
-          <CardSpotlight className="h-[200px]">
+          <CardSpotlight className="flex flex-col gap-2 h-full">
+            <p className="text-4xl">💻</p>
             <p>
-              💻 Accessible Anytime, Anywhere Access from any device with just a
+              Accessible Anytime, Anywhere Access from any device with just a
               browser. Seamlessly support your digital work without any hassle.
             </p>
           </CardSpotlight>
-          <CardSpotlight className="h-[200px]">
-            <p>
-              🔐 Simple and Secure Utilize all features without registration.
-              Use with confidence under high security standards.
-            </p>
+          <CardSpotlight className="flex flex-col gap-2 h-full">
+            <p className="text-4xl">🔐</p>
+            <p>Simple and Secure Utilize all features without registration.</p>
           </CardSpotlight>
         </div>
       </div>
