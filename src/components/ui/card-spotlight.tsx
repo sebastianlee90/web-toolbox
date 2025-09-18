@@ -52,7 +52,7 @@ export function CardSpotlight({
         {...props}
       >
         <motion.div
-          className="pointer-events-none absolute z-0 -inset-px rounded-3xl opacity-0 group-hover/spotlight:opacity-50"
+          className="pointer-events-none absolute -z-10 -inset-px rounded-3xl opacity-0 group-hover/spotlight:opacity-50"
           style={{
             backgroundColor: color,
             maskImage: useMotionTemplate`
