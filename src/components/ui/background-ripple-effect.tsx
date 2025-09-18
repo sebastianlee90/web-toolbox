@@ -5,7 +5,7 @@ import React, { useMemo, useRef, useState } from "react";
 
 export function BackgroundRippleEffect({
   rows = 8,
-  cols = 27, // TODO: Column value needs to be dynamically calculated based on the width of the container
+  cols = 50,
   cellSize = 56,
   children,
 }: {
