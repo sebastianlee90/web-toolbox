@@ -6,6 +6,7 @@ import { motion, useInView } from "motion/react";
 import Link from "next/link";
 import { useRef } from "react";
 
+// Category Header Section
 // Create a separate component for each category
 function ToolCategory({ item, index }: { item: toolsType; index: number }) {
   const ref = useRef(null);
@@ -38,6 +39,7 @@ function ToolCategory({ item, index }: { item: toolsType; index: number }) {
   );
 }
 
+/* Tools List Section */
 // Create a separate component for each tool item
 function ToolItem({
   subItem,
