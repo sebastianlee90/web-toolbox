@@ -15,7 +15,7 @@ export function ThemeChanger() {
     if (isAboutPage) {
       setTheme("dark");
     }
-  }, [pathName]);
+  }, [pathName, isAboutPage]);
 
   return (
     // <DropdownMenu>
