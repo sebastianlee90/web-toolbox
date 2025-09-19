@@ -26,6 +26,6 @@ export const FAQ_QNA = [
   {
     question: "Are there plans to add new tools or features?",
     answer:
-      "Yes, we plan to add new tools and features from time to time. Please send us your tool requests and feedback so we can help with future development😉",
+      "Yes, we plan to add new tools and features from time to time. Feel free to send us your tool requests and feedback so we can help with future development😉",
   },
 ];
