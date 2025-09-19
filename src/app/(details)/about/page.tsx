@@ -39,10 +39,12 @@ export default function Page() {
         </div>
         <div className="flex flex-col gap-4">
           <h1 className={headerClassName}>Tools Request Submission</h1>
-          <div className="grid grid-cols-3 gap-4">
-            <div />
+          <Link
+            className="flex justify-center"
+            href="https://forms.gle/TAi6bDRF9zsdbKcTA"
+          >
             <Button title="Submit Request">Submit Request</Button>
-          </div>
+          </Link>
         </div>
         <div className="flex flex-col">
           <h1 className={headerClassName}>Technology</h1>
