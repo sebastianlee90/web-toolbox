@@ -13,7 +13,7 @@ export function Header({ className }: { className?: string }) {
     .find((child) => child.href === pathName);
 
   return (
-    <div className="flex flex-col gap-4 h-40">
+    <div className="flex flex-col gap-4 min-h-40">
       <div className={cn("flex flex-row gap-2 text-5xl font-bold", className)}>
         {tool?.name}
       </div>
