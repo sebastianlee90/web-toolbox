@@ -31,8 +31,9 @@ export function Command() {
     .filter((item) => item.children) // Only include items with children
     .map((item) => (
       <CommandGroup key={item.name} heading={item.name}>
-        {item.children?.map((subItem) => (
+        {item.children?.map((subItem, index) => (
           <CommandItem
+            key={index}
             onSelect={() => {
               setOpen(false);
               window.location.href = subItem.href;
