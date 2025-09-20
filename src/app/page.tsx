@@ -4,6 +4,7 @@ import { Logo } from "@/components/icons/logo";
 import { BackgroundRippleEffect } from "@/components/ui/background-ripple-effect";
 import { CardSpotlight } from "@/components/ui/card-spotlight";
 import { InfiniteMovingCards } from "@/components/ui/infinite-moving-cards";
+import { BRAND } from "@/constants/brand";
 import { FAQ_QNA } from "@/constants/faqQnA";
 import { qualitySection } from "@/constants/qualitySection";
 
@@ -15,10 +16,10 @@ export default function Home() {
         <div className="flex flex-col items-center justify-center w-full z-10">
           <h1 className="flex gap-2 relative mx-auto max-w-4xl text-center font-bold text-foreground text-7xl">
             <Logo className="text-foreground size-24" />
-            <span className="mt-1.5">Web Toolbox</span>
+            <span className="mt-1.5">{BRAND.name}</span>
           </h1>
           <p className="relative mx-auto mt-4 max-w-xl text-center text-2xl text-muted-foreground">
-            Simplifying tasks, one tool at a time
+            {BRAND.description}
           </p>
         </div>
       </BackgroundRippleEffect>

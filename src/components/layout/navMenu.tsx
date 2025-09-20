@@ -9,6 +9,7 @@ import {
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
+import { BRAND } from "@/constants/brand";
 import { cn, toRenderSideBar } from "@/lib/utils";
 import { HomeIcon } from "lucide-react";
 import { usePathname } from "next/navigation";
@@ -44,7 +45,7 @@ export function NavigationMenu() {
             ) : (
               <>
                 <Logo className="mt-1 size-10 text-foreground" />
-                <span className="mt-0.5 text-xl font-bold">Web Toolbox</span>
+                <span className="mt-0.5 text-xl font-bold">{BRAND.name}</span>
               </>
             )}
           </NavigationMenuLink>

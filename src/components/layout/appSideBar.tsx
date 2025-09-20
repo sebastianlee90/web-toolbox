@@ -12,6 +12,7 @@ import {
   SidebarMenuSub,
   SidebarTrigger,
 } from "@/components/ui/sidebar";
+import { BRAND } from "@/constants/brand";
 import { toolsList } from "@/constants/toolsList";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
@@ -31,7 +32,7 @@ export function AppSidebar() {
         <div className="flex flex-row justify-between px-2 items-center text-base group-data-[collapsible=icon]:p-0.5">
           <p className="group-data-[collapsible=icon]:hidden font-medium flex flex-row gap-2">
             <Logo className="-mb-0.5 text-foreground" />
-            <span className="mt-0.5">Web Toolbox</span>
+            <span className="mt-0.5">{BRAND.name}</span>
           </p>
           <SidebarTrigger />
         </div>

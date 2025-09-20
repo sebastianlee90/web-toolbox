@@ -24,8 +24,8 @@ const roboto = Roboto({
 });
 
 export const metadata: Metadata = {
-  title: "Web Toolbox",
-  description: "Web Toolbox",
+  title: "Simplifying tasks, one tool at a time - selkcn/webtools",
+  description: "Simplifying tasks, one tool at a time - selkcn/webtools",
 };
 
 export default function RootLayout({
