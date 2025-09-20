@@ -39,7 +39,8 @@ export function Instruction({ className }: { className?: string }) {
         } else {
           setMarkdown("# 📄 Instruction\n\nNo instruction file found.");
         }
-      } catch (err) {
+      } catch (error) {
+        console.error(`[Markdown Loader] Failed to load ${filename}.md`, error);
         setMarkdown("# 📄 Instruction\n\nNo instruction file found.");
       }
     })();
