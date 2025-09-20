@@ -9,10 +9,11 @@ import {
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
+import { BRAND } from "@/constants/brand";
 import { cn, toRenderSideBar } from "@/lib/utils";
 import { HomeIcon } from "lucide-react";
 import { usePathname } from "next/navigation";
-import { aboutList, toolList } from "../../constants/layout/navMenuConstants";
+import { aboutList } from "../../constants/layout/navMenuConstants";
 import { Command } from "../form/command";
 import { Logo } from "../icons/logo";
 import { ListItem } from "./navMenuListItem";
@@ -40,26 +41,14 @@ export function NavigationMenu() {
         <NavigationMenuItem>
           <NavigationMenuLink href="/" className={navigationMenuTriggerStyle()}>
             {renderIcon ? (
-              <HomeIcon className="size-4 text-accent-foreground" />
+              <HomeIcon className="size-6 text-accent-foreground" />
             ) : (
               <>
-                <Logo className="mt-1 size-6 text-foreground" />
-                <span className="mt-0.5">Web Toolbox</span>
+                <Logo className="mt-1 size-10 text-foreground" />
+                <span className="mt-0.5 text-xl font-bold">{BRAND.name}</span>
               </>
             )}
           </NavigationMenuLink>
-        </NavigationMenuItem>
-        <NavigationMenuItem>
-          <NavigationMenuTrigger>Tools</NavigationMenuTrigger>
-          <NavigationMenuContent className="start-0">
-            <ul className="grid w-[400px] gap-2 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
-              {toolList.map((data) => (
-                <ListItem key={data.title} title={data.title} href={data.href}>
-                  {data.description}
-                </ListItem>
-              ))}
-            </ul>
-          </NavigationMenuContent>
         </NavigationMenuItem>
       </NavigationMenuList>
       <NavigationMenuList>

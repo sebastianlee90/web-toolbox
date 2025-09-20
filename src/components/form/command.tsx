@@ -10,7 +10,6 @@ import {
 } from "@/components/ui/command";
 import { toolsList } from "@/constants/toolsList";
 import { MagnifyingGlassIcon } from "@radix-ui/react-icons";
-import Link from "next/link";
 import { useEffect, useState } from "react";
 
 export function Command() {
@@ -32,13 +31,17 @@ export function Command() {
     .filter((item) => item.children) // Only include items with children
     .map((item) => (
       <CommandGroup key={item.name} heading={item.name}>
-        {item.children?.map((subItem) => (
-          <Link key={subItem.name} href={subItem.href}>
-            <CommandItem onSelect={() => setOpen(false)}>
-              {subItem.icon && <subItem.icon className="mr-2 size-4" />}
-              <span>{subItem.name}</span>
-            </CommandItem>
-          </Link>
+        {item.children?.map((subItem, index) => (
+          <CommandItem
+            key={index}
+            onSelect={() => {
+              setOpen(false);
+              window.location.href = subItem.href;
+            }}
+          >
+            {subItem.icon && <subItem.icon className="mr-2 size-4" />}
+            <span>{subItem.name}</span>
+          </CommandItem>
         ))}
       </CommandGroup>
     ));

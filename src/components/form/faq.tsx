@@ -7,7 +7,8 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { cn } from "@/lib/utils";
-import { motion } from "motion/react";
+import { motion, useInView } from "motion/react";
+import { useRef } from "react";
 
 interface FaqSectionProps extends React.HTMLAttributes<HTMLElement> {
   title: string;
@@ -19,12 +20,16 @@ interface FaqSectionProps extends React.HTMLAttributes<HTMLElement> {
 }
 
 export function Faq({ title, description, items, ...props }: FaqSectionProps) {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
+
   return (
     <section {...props}>
       {/* Header */}
       <motion.div
+        ref={ref}
         initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
+        animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
         transition={{ duration: 0.5 }}
         className="max-w-2xl mx-auto text-center mb-12"
       >

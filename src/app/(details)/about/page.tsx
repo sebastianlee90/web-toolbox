@@ -1,7 +1,12 @@
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { MessageCircleHeart } from "lucide-react";
+import { Metadata } from "next";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "About", // This will be inserted into the template
+};
 
 export default function Page() {
   const headerClassName = "font-bold text-2xl pb-2 border-b border-foreground";
@@ -39,10 +44,12 @@ export default function Page() {
         </div>
         <div className="flex flex-col gap-4">
           <h1 className={headerClassName}>Tools Request Submission</h1>
-          <div className="grid grid-cols-3 gap-4">
-            <div />
+          <Link
+            className="flex justify-center"
+            href="https://forms.gle/TAi6bDRF9zsdbKcTA"
+          >
             <Button title="Submit Request">Submit Request</Button>
-          </div>
+          </Link>
         </div>
         <div className="flex flex-col">
           <h1 className={headerClassName}>Technology</h1>

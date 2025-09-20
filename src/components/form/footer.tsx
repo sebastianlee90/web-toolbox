@@ -1,12 +1,13 @@
 import { Footer as FFooter } from "@/components/ui/footer";
 // import { GitHubLogoIcon, TwitterLogoIcon } from "@radix-ui/react-icons";
+import { BRAND } from "@/constants/brand";
 import { Logo } from "../icons/logo";
 
 export function Footer() {
   return (
     <FFooter
       logo={<Logo className="size-10" />}
-      brandName="Web Toolbox"
+      brandName={BRAND.name}
       // socialLinks={[
       //   {
       //     icon: <TwitterLogoIcon className="h-5 w-5" />,
@@ -30,7 +31,7 @@ export function Footer() {
         // { href: "/terms", label: "Terms" },
       ]}
       copyright={{
-        text: "© 2025 Web Toolbox",
+        text: "© 2025 " + BRAND.name,
         license: "All rights reserved",
       }}
     />
