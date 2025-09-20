@@ -1,6 +1,5 @@
 "use client";
 
-import { loadMarkdownByFilename } from "@/lib/markdown";
 import { cn } from "@/lib/utils";
 // import "github-markdown-css/github-markdown.css";
 import { usePathname } from "next/navigation";
@@ -13,6 +12,18 @@ export function Instruction({ className }: { className?: string }) {
   const pathname = usePathname(); // e.g., "/base64_encode"
   const [markdown, setMarkdown] = useState("");
 
+  // useEffect(() => {
+  //   if (!pathname) return;
+
+  //   const segments = pathname.split("/").filter(Boolean); // e.g., ['base64_encode']
+  //   const filename = segments[segments.length - 1]; // gets 'base64_encode'
+
+  //   (async () => {
+  //     const documentContent = await loadMarkdownByFilename(filename);
+  //     setMarkdown(documentContent);
+  //   })();
+  // }, [pathname]);
+
   useEffect(() => {
     if (!pathname) return;
 
@@ -20,8 +31,17 @@ export function Instruction({ className }: { className?: string }) {
     const filename = segments[segments.length - 1]; // gets 'base64_encode'
 
     (async () => {
-      const documentContent = await loadMarkdownByFilename(filename);
-      setMarkdown(documentContent);
+      try {
+        const res = await fetch(`/readme/${filename}.md`);
+        if (res.ok) {
+          const text = await res.text();
+          setMarkdown(text);
+        } else {
+          setMarkdown("# 📄 Instruction\n\nNo instruction file found.");
+        }
+      } catch (err) {
+        setMarkdown("# 📄 Instruction\n\nNo instruction file found.");
+      }
     })();
   }, [pathname]);
 
