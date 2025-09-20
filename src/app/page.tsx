@@ -14,11 +14,11 @@ export default function Home() {
       {/* Hero Section */}
       <BackgroundRippleEffect>
         <div className="flex flex-col items-center justify-center w-full z-10">
-          <h1 className="flex gap-2 relative mx-auto max-w-4xl text-center font-bold text-foreground text-7xl">
-            <Logo className="text-foreground size-24" />
+          <h1 className="flex gap-2 justify-center font-bold text-foreground text-5xl sm:text-7xl text-nowrap">
+            <Logo className="text-foreground size-16 sm:size-24" />
             <span className="mt-1.5">{BRAND.name}</span>
           </h1>
-          <p className="relative mx-auto mt-4 max-w-xl text-center text-2xl text-muted-foreground">
+          <p className="relative mx-auto mt-4 max-w-xl text-center text-xl sm:text-2xl text-muted-foreground">
             {BRAND.description}
           </p>
         </div>
