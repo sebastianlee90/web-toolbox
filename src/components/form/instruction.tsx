@@ -1,7 +1,7 @@
 "use client";
 
+import { loadMarkdownByFilename } from "@/lib/markdown";
 import { cn } from "@/lib/utils";
-import { loadMarkdownByFilename } from "../../lib/markdown";
 // import "github-markdown-css/github-markdown.css";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
