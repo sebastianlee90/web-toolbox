@@ -1,7 +1,12 @@
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { MessageCircleHeart } from "lucide-react";
+import { Metadata } from "next";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "About", // This will be inserted into the template
+};
 
 export default function Page() {
   const headerClassName = "font-bold text-2xl pb-2 border-b border-foreground";

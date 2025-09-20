@@ -3,7 +3,7 @@ import { Background } from "@/components/layout/background";
 import { NavigationMenu } from "@/components/layout/navMenu";
 import { SideBarWrapper } from "@/components/layout/sideBarWrapper";
 import { ThemeProvider } from "@/components/ui/themeProvider";
-import type { Metadata } from "next";
+import { Metadata } from "next";
 import { Roboto } from "next/font/google";
 import { Toaster } from "sonner";
 import "./globals.css";
@@ -24,8 +24,11 @@ const roboto = Roboto({
 });
 
 export const metadata: Metadata = {
-  title: "Simplifying tasks, one tool at a time - selkcn/webtools",
-  description: "Simplifying tasks, one tool at a time - selkcn/webtools",
+  title: {
+    default: "Simplifying tasks, one tool at a time | selkcn/webtools",
+    template: "%s | selkcn/webtools",
+  },
+  description: "Simplifying tasks, one tool at a time | selkcn/webtools",
 };
 
 export default function RootLayout({
