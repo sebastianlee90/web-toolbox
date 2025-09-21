@@ -1,5 +1,4 @@
-import { Header } from "@/components/form/header";
-import { Instruction } from "@/components/form/instruction";
+import { DetailsPageWrapper } from "@/components/layout/detailsPageWrapper";
 import { Metadata } from "next";
 import { Body } from "./body";
 
@@ -9,10 +8,8 @@ export const metadata: Metadata = {
 
 export default function Page() {
   return (
-    <div className="flex flex-col gap-4">
-      <Header />
+    <DetailsPageWrapper>
       <Body />
-      <Instruction />
-    </div>
+    </DetailsPageWrapper>
   );
 }
