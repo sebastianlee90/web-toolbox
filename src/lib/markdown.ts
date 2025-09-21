@@ -4,7 +4,12 @@ import fs from "fs";
 import path from "path";
 
 export async function loadMarkdownByFilename(filename: string) {
-  const filePath = path.join(process.cwd(), "src", "readme", `${filename}.md`);
+  const filePath = path.join(
+    process.cwd(),
+    "public",
+    "readme",
+    `${filename}.md`
+  );
 
   try {
     const content = fs.readFileSync(filePath, "utf-8");

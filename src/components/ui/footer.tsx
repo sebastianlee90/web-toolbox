@@ -32,7 +32,7 @@ export function Footer({
   copyright,
 }: FooterProps) {
   return (
-    <footer className="pt-16 lg:pt-24 w-full">
+    <footer className="pt-12">
       <div className="pb-6 lg:pb-8 border-t border-foreground pt-4 px-4 lg:px-8 backdrop-blur-sm dark:backdrop-blur-none dark:bg-zinc-900/60">
         <div className="md:flex md:items-start md:justify-between">
           <ul className="flex list-none mt-6 md:mt-0 space-x-3">
