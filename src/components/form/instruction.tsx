@@ -3,12 +3,15 @@
 import { cn } from "@/lib/utils";
 // import "github-markdown-css/github-markdown.css";
 import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
+import { forwardRef, useEffect, useState } from "react";
 import ReactMarkdown from "react-markdown";
 import rehypeRaw from "rehype-raw";
 import remarkGfm from "remark-gfm";
 
-export function Instruction({ className }: { className?: string }) {
+function InstructionContent(
+  { className }: { className?: string },
+  ref: React.Ref<HTMLElement>
+) {
   const pathname = usePathname(); // e.g., "/base64_encode"
   const [markdown, setMarkdown] = useState("");
 
@@ -48,9 +51,12 @@ export function Instruction({ className }: { className?: string }) {
 
   return (
     <article
+      ref={ref}
+      id="instruction"
       className={cn(
         "w-full border border-black p-4 rounded-xl",
         "markdown-body",
+        "scroll-mt-[60px]",
         className
       )}
     >
@@ -78,3 +84,5 @@ export function Instruction({ className }: { className?: string }) {
     </article>
   );
 }
+
+export const Instruction = forwardRef(InstructionContent);

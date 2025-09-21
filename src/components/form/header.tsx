@@ -6,7 +6,13 @@ import { CircleHelpIcon } from "lucide-react";
 import { usePathname } from "next/navigation";
 import { Button } from "../ui/button";
 
-export function Header({ className }: { className?: string }) {
+export function Header({
+  className,
+  onHowToClick,
+}: {
+  className?: string;
+  onHowToClick?: () => void;
+}) {
   const pathName = usePathname();
   const tool = toolsList
     .flatMap((item) => item.children ?? [])
@@ -19,7 +25,7 @@ export function Header({ className }: { className?: string }) {
       </div>
       <p className="text-primary">{tool?.desciption}</p>
       <div className="flex flex-row justify-end">
-        <Button variant="outline" type="button">
+        <Button variant="outline" type="button" onClick={onHowToClick}>
           <CircleHelpIcon className="size-4" />
           How To
         </Button>
