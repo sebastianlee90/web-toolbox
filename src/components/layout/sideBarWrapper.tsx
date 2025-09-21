@@ -12,7 +12,7 @@ export function SideBarWrapper({ children }: { children: React.ReactNode }) {
   return (
     <>
       {toRender ? (
-        <SidebarProvider defaultOpen={pathName !== "/"}>
+        <SidebarProvider>
           <AppSidebar />
           {children}
         </SidebarProvider>
