@@ -38,6 +38,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="light" style={{ colorScheme: "light" }}>
+      <head>
+        <script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6276242306165107"
+          crossOrigin="anonymous"
+        ></script>
+      </head>
       <body
         className={`${roboto.variable} antialiased`}
         // style={{
