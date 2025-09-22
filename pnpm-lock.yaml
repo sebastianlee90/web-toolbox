@@ -5,12 +5,12 @@ settings:
   excludeLinksFromLockfile: false
 
 dependencies:
+  '@ctrl/react-adsense':
+    specifier: ^2.1.0
+    version: 2.1.0
   '@radix-ui/react-accordion':
     specifier: ^1.2.12
     version: 1.2.12(@types/react-dom@19.1.7)(@types/react@19.1.10)(react-dom@19.1.1)(react@19.1.1)
-      '@ctrl/react-adsense':
-        specifier: ^2.0.0
-        version: 2.0.0
   '@radix-ui/react-dialog':
     specifier: ^1.1.15
     version: 1.1.15(@types/react-dom@19.1.7)(@types/react@19.1.10)(react-dom@19.1.1)(react@19.1.1)
@@ -137,8 +137,11 @@ packages:
     engines: {node: '>=6.9.0'}
     dev: false
 
-  '@ctrl/react-adsense@2.0.0':
-    resolution: {integrity: sha512-eZrgMAWFwnUhuJjGnD+IQw/uCXNA1qZNcTpuLwxenWGGenGxjnLniqmFKbpp9vQ3sViBqNDfL45ijkHSPW3r0A==}
+  /@ctrl/react-adsense@2.1.0:
+    resolution: {integrity: sha512-au+OAi/33hE5RUZ/rUN760O+SfDF0bb1tofMHeeEpudR3RLQFN3MtliwJn6aktlqoZTovQuEW+ZXLo42ED2IAw==}
+    dependencies:
+      tslib: 2.8.1
+    dev: false
 
   /@emnapi/core@1.4.5:
     resolution: {integrity: sha512-XsLw1dEOpkSX/WucdqUhPWP7hDxSvZiY+fsUC14h+FtQ2Ifni4znbBt8punRX+Uj2JG/uDb8nEHVKvrVlvdZ5Q==}
