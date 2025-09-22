@@ -9,17 +9,22 @@ import {
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
-import { cn } from "@/lib/utils";
+import { BRAND } from "@/constants/brand";
+import { cn, toRenderSideBar } from "@/lib/utils";
 import { HomeIcon } from "lucide-react";
-import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { aboutList } from "../../constants/layout/navMenuConstants";
 import { Command } from "../form/command";
-import { aboutList, toolList } from "./navMenuConstants";
+import { Logo } from "../icons/logo";
 import { ListItem } from "./navMenuListItem";
 import { ThemeChanger } from "./themeChanger";
 // import { SidebarTrigger } from "../ui/sidebar";
 // import { CircleCheckIcon, CircleHelpIcon, CircleIcon } from "lucide-react";
 
 export function NavigationMenu() {
+  const pathName = usePathname();
+  const renderIcon = toRenderSideBar(pathName);
+
   return (
     <NavigationMenuPrimitive
       className={cn(
@@ -34,23 +39,16 @@ export function NavigationMenu() {
           <SidebarTrigger />
         </NavigationMenuItem> */}
         <NavigationMenuItem>
-          <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
-            <Link href="/">
-              <HomeIcon className="size-4 text-accent-foreground" />
-            </Link>
+          <NavigationMenuLink href="/" className={navigationMenuTriggerStyle()}>
+            {renderIcon ? (
+              <HomeIcon className="size-6 text-accent-foreground" />
+            ) : (
+              <>
+                <Logo className="mt-1 size-10 text-foreground" />
+                <span className="mt-0.5 text-xl font-bold">{BRAND.name}</span>
+              </>
+            )}
           </NavigationMenuLink>
-        </NavigationMenuItem>
-        <NavigationMenuItem>
-          <NavigationMenuTrigger>Tools</NavigationMenuTrigger>
-          <NavigationMenuContent className="start-0">
-            <ul className="grid w-[400px] gap-2 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
-              {toolList.map((data) => (
-                <ListItem key={data.title} title={data.title} href={data.href}>
-                  {data.description}
-                </ListItem>
-              ))}
-            </ul>
-          </NavigationMenuContent>
         </NavigationMenuItem>
       </NavigationMenuList>
       <NavigationMenuList>

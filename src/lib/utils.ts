@@ -1,3 +1,7 @@
+import {
+  BACKGROUND_TO_NOT_RENDER,
+  SIDE_BAR_TO_NOT_RENDER,
+} from "@/constants/pages/render";
 import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
 
@@ -20,4 +24,16 @@ export function toCamelCase(text: string): string {
 export function isScientificNotation(str: string) {
   const regex = /^[+-]?\d+(\.\d+)?[eE][+-]?\d+$/;
   return regex.test(str);
+}
+
+export function toRenderBackground(pathname: string) {
+  const excludeChildrenUrl = BACKGROUND_TO_NOT_RENDER;
+  const toRender = !excludeChildrenUrl?.includes(pathname);
+  return toRender;
+}
+
+export function toRenderSideBar(pathname: string) {
+  const excludeChildrenUrl = SIDE_BAR_TO_NOT_RENDER;
+  const toRender = !excludeChildrenUrl?.includes(pathname);
+  return toRender;
 }

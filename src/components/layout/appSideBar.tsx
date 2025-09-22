@@ -12,15 +12,16 @@ import {
   SidebarMenuSub,
   SidebarTrigger,
 } from "@/components/ui/sidebar";
+import { BRAND } from "@/constants/brand";
+import { toolsList } from "@/constants/toolsList";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Logo } from "../icons/logo";
 import { Badge } from "../ui/badge";
-import { appSideBarItems } from "./appSideBarItems";
 
 export function AppSidebar() {
-  const totalTools = appSideBarItems.reduce(
+  const totalTools = toolsList.reduce(
     (acc, item) => acc + (item.children ? item.children.length : 0),
     0
   );
@@ -31,7 +32,7 @@ export function AppSidebar() {
         <div className="flex flex-row justify-between px-2 items-center text-base group-data-[collapsible=icon]:p-0.5">
           <p className="group-data-[collapsible=icon]:hidden font-medium flex flex-row gap-2">
             <Logo className="-mb-0.5 text-foreground" />
-            <span className="mt-0.5">Web Toolbox</span>
+            <span className="mt-0.5">{BRAND.name}</span>
           </p>
           <SidebarTrigger />
         </div>
@@ -43,7 +44,7 @@ export function AppSidebar() {
       <SidebarContent>
         <SidebarGroup>
           <SidebarMenu>
-            {appSideBarItems.map((item) => (
+            {toolsList.map((item) => (
               <NavItem key={item.name} item={item} />
             ))}
           </SidebarMenu>
@@ -58,7 +59,7 @@ function NavItem({
   item,
   child,
 }: {
-  item: (typeof appSideBarItems)[0];
+  item: (typeof toolsList)[0];
   child?: boolean;
 }) {
   const pathname = usePathname();

@@ -1,22 +1,15 @@
-import { Header } from "@/components/form/header";
-import { Instruction } from "@/components/form/instruction";
-import { ArrowUp01 } from "lucide-react";
+import { DetailsPageWrapper } from "@/components/layout/detailsPageWrapper";
+import { Metadata } from "next";
 import { Body } from "./body";
+
+export const metadata: Metadata = {
+  title: "UUID V1 to V6", // This will be inserted into the template
+};
 
 export default function Page() {
   return (
-    <div className="flex flex-col gap-4">
-      <Header
-        title={
-          <>
-            <ArrowUp01 className="size-12 border-4 p-0.5 " />
-            UUID V1 to V6
-          </>
-        }
-        description="Convert Version 1 UUIDs to Version 6 UUIDs"
-      />
+    <DetailsPageWrapper>
       <Body />
-      <Instruction />
-    </div>
+    </DetailsPageWrapper>
   );
 }
